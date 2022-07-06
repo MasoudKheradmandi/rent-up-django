@@ -1,0 +1,864 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block body %}
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+		
+            <!-- ============================================================== -->
+            <!-- Top header  -->
+            <!-- ============================================================== -->
+            <!-- Start Navigation -->
+
+			<!-- End Navigation -->
+			<div class="clearfix"></div>
+			<!-- ============================================================== -->
+			<!-- Top header  -->
+			<!-- ============================================================== -->
+			
+			<!-- ============================ All Property ================================== -->
+			<section class="gray pt-4">
+			
+				<div class="container">
+					
+					<div class="row m-0">
+						<div class="short_wraping">
+							<div class="row align-items-center">
+							
+								<div class="col-lg-3 col-md-6 col-sm-12  col-sm-6">
+									<ul class="shorting_grid">
+										<li class="list-inline-item"><a href="grid-layout-with-sidebar.html" class="active"><span class="ti-layout-grid2"></span>شبکه ای</a></li>
+										<li class="list-inline-item"><a href="list-layout-with-sidebar.html"><span class="ti-view-list"></span>لیستی</a></li>
+										<li class="list-inline-item"><a href="#"><span class="ti-map-alt"></span>نقشه</a></li>
+									</ul>
+								</div>
+						
+								<div class="col-lg-6 col-md-12 col-sm-12 order-lg-2 order-md-3 elco_bor col-sm-12">
+									<div class="shorting_pagination">
+										<div class="shorting_pagination_laft">
+											<h5>نمایش 1-25 از 72 نتیجه</h5>
+										</div>
+										<div class="shorting_pagination_right">
+											<ul>
+												<li><a href="javascript:void(0);" class="active">1</a></li>
+												<li><a href="javascript:void(0);">2</a></li>
+												<li><a href="javascript:void(0);">3</a></li>
+												<li><a href="javascript:void(0);">4</a></li>
+												<li><a href="javascript:void(0);">5</a></li>
+												<li><a href="javascript:void(0);">6</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+						
+								<div class="col-lg-3 col-md-6 col-sm-12 order-lg-3 order-md-2 col-sm-6">
+									<div class="shorting-right">
+										<label>مرتب سازی بر اساس:</label>
+										<div class="dropdown show">
+											<a class="btn btn-filter dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<span class="selection">بیشترین امتیاز</span>
+											</a>
+											<div class="drp-select dropdown-menu">
+												<a class="dropdown-item" href="JavaScript:Void(0);">بیشترین امتیاز</a>
+												<a class="dropdown-item" href="JavaScript:Void(0);">بیشترین بازدید</a>
+												<a class="dropdown-item" href="JavaScript:Void(0);">جدیدترین</a>
+												<a class="dropdown-item" href="JavaScript:Void(0);">کمتریت امتیاز</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						
+						<!-- property Sidebar -->
+						<div class="col-lg-4 col-md-12 col-sm-12">
+							<div class="page-sidebar p-0">
+								<a class="filter_links" data-toggle="collapse" href="#fltbox" role="button" aria-expanded="false" aria-controls="fltbox">فیلتر پیشرفته<i class="fa fa-sliders-h mr-2"></i></a>							
+								<div class="collapse" id="fltbox">
+									<!-- Find New Property -->
+									<div class="sidebar-widgets p-4">
+										
+										<div class="form-group">
+											<div class="input-with-icon">
+												<input type="text" class="form-control" placeholder="منطقه">
+												<i class="ti-search"></i>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<div class="input-with-icon">
+												<input type="text" class="form-control" placeholder="موقعیت">
+												<i class="ti-location-pin"></i>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<div class="simple-input">
+												<select id="ptype" class="form-control">
+													<option value="">&nbsp;</option>
+													<option value="1">آپارتمان</option>
+													<option value="2">اداری</option>
+													<option value="3">خانوادگی</option>
+													<option value="4">خانه</option>
+													<option value="5">ویلا</option>
+												</select>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<div class="simple-input">
+												<select id="status" class="form-control">
+													<option value="">&nbsp;</option>
+													<option value="1">آپارتمان</option>
+													<option value="2">اداری</option>
+													<option value="3">خانه</option>
+													<option value="4">ویلا</option>
+													<option value="5">زمین</option>
+												</select>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<div class="simple-input">
+												<select id="price" class="form-control">
+													<option value="">&nbsp;</option>
+													<option value="1">کمتر از 1000 تومان</option>
+													<option value="2">1000 تومان - 2000 تومان</option>
+													<option value="3">2000 تومان - 3000 تومان</option>
+													<option value="4">3000 تومان - 4000 تومان</option>
+													<option value="5">بالای 5000 تومان</option>
+												</select>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<div class="simple-input">
+												<select id="bedrooms" class="form-control">
+													<option value="">&nbsp;</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+												</select>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<div class="simple-input">
+												<select id="bathrooms" class="form-control">
+													<option value="">&nbsp;</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+												</select>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<div class="simple-input">
+												<select id="garage" class="form-control">
+													<option value="">&nbsp;</option>
+													<option value="1">پارکینگ</option>
+													<option value="2">دارد</option>
+													<option value="3">ندارد</option>
+												</select>
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<div class="simple-input">
+												<select id="built" class="form-control">
+													<option value="">&nbsp;</option>
+													<option value="1">1394</option>
+													<option value="2">1395</option>
+													<option value="3">1396</option>
+													<option value="4">1397</option>
+													<option value="5">1398</option>
+													<option value="6">1399</option>
+													<option value="7">1400</option>
+												</select>
+											</div>
+										</div>
+										
+										<div class="row">
+											<div class="col-lg-6 col-md-6 col-sm-6">
+												<div class="form-group">
+													<div class="simple-input">
+														<input type="text" class="form-control" placeholder="حداقل مساحت">
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-6 col-md-6 col-sm-6">
+												<div class="form-group">
+													<div class="simple-input">
+														<input type="text" class="form-control" placeholder="حداکثر مساحت">
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="row">
+											<div class="col-lg-12 col-md-12 col-sm-12 pt-4 pb-4">
+												<h6>قیمت</h6>
+												<div class="rg-slider">
+													 <input type="text" class="js-range-slider" name="my_range" value="" />
+												</div>
+											</div>
+										</div>									
+										
+										<div class="row">
+											<div class="col-lg-12 col-md-12 col-sm-12 pt-4">
+												<h6>ویژگی های پیشرفته</h6>
+												<ul class="row p-0 m-0">
+													<li class="col-lg-6 col-md-6 p-0">
+														<input id="a-1" class="checkbox-custom" name="a-1" type="checkbox">
+														<label for="a-1" class="checkbox-custom-label">تهویه کننده هوا</label>
+													</li>
+													<li class="col-lg-6 col-md-6 p-0">
+														<input id="a-2" class="checkbox-custom" name="a-2" type="checkbox">
+														<label for="a-2" class="checkbox-custom-label">تختواب</label>
+													</li>
+													<li class="col-lg-6 col-md-6 p-0">
+														<input id="a-3" class="checkbox-custom" name="a-3" type="checkbox">
+														<label for="a-3" class="checkbox-custom-label">سیستم گرمایشی</label>
+													</li>
+													<li class="col-lg-6 col-md-6 p-0">
+														<input id="a-4" class="checkbox-custom" name="a-4" type="checkbox">
+														<label for="a-4" class="checkbox-custom-label">اینترنت</label>
+													</li>
+													<li class="col-lg-6 col-md-6 p-0">
+														<input id="a-5" class="checkbox-custom" name="a-5" type="checkbox">
+														<label for="a-5" class="checkbox-custom-label">مایکروویو</label>
+													</li>
+													<li class="col-lg-6 col-md-6 p-0">
+														<input id="a-6" class="checkbox-custom" name="a-6" type="checkbox">
+														<label for="a-6" class="checkbox-custom-label">سیگار کشیدن</label>
+													</li>
+													<li class="col-lg-6 col-md-6 p-0">
+														<input id="a-7" class="checkbox-custom" name="a-7" type="checkbox">
+														<label for="a-7" class="checkbox-custom-label">تراس</label>
+													</li>
+													<li class="col-lg-6 col-md-6 p-0">
+														<input id="a-8" class="checkbox-custom" name="a-8" type="checkbox">
+														<label for="a-8" class="checkbox-custom-label">بالکن</label>
+													</li>
+													<li class="col-lg-6 col-md-6 p-0">
+														<input id="a-9" class="checkbox-custom" name="a-9" type="checkbox">
+														<label for="a-9" class="checkbox-custom-label">پارکینگ</label>
+													</li>
+												</ul>
+											</div>
+										</div>
+										
+										<div class="row">
+											<div class="col-lg-12 col-md-12 col-sm-12 pt-4">
+												<button class="btn theme-bg rounded full-width">پیدا کردن خانه جدید</button>
+											</div>
+										</div>
+									
+									</div>
+								</div>
+							</div>
+							<!-- Sidebar End -->						
+						</div>
+						
+						<div class="col-lg-8 col-md-12 col-sm-12">
+							<div class="row justify-content-center">
+						
+								<!-- Single Property -->
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+									<div class="property-listing list_view">
+										
+										<div class="listing-img-wrapper">
+											<div class="_exlio_125">برای فروش</div>
+											<div class="list-img-slide">
+												<div class="click">
+													<div><a href="single-property-1.html"><img src="assets/img/p-1.png" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><a href="single-property-1.html"><img src="assets/img/p-2.png" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><a href="single-property-1.html"><img src="assets/img/p-3.png" class="img-fluid mx-auto" alt="" /></a></div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="list_view_flex">
+										
+											<div class="listing-detail-wrapper mt-1">
+												<div class="listing-short-detail-wrap">
+													<div class="_card_list_flex mb-2">
+														<div class="_card_flex_01">
+															<span class="_list_blickes _netork">6 شبکه</span>
+															<span class="_list_blickes types">خانوادگی</span>
+														</div>
+														<div class="_card_flex_last">
+															<h6 class="listing-card-info-price mb-0">700 میلیون</h6>
+														</div>
+													</div>
+													<div class="_card_list_flex">
+														<div class="_card_flex_01">
+															<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></h4>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="price-features-wrapper">
+												<div class="list-fx-features">
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>3 خوابه
+													</div>
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>1 حمام
+													</div>
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>800 متر مربع
+													</div>
+												</div>
+											</div>
+											
+											<div class="listing-detail-footer">
+												<div class="footer-first">
+													<div class="foot-rates">
+														<span class="elio_rate good">4.2</span>
+														<div class="_rate_stio">
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+														</div>
+													</div>
+												</div>
+												<div class="footer-flex">
+													<a href="property-detail.html" class="prt-view">مشاهده جزئیات</a>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<!-- End Single Property -->
+								
+								<!-- Single Property -->
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+									<div class="property-listing list_view">
+										
+										<div class="listing-img-wrapper">
+											<div class="_exlio_125">برای اجاره</div>
+											<div class="list-img-slide">
+												<div class="click">
+													<div><a href="single-property-1.html"><img src="assets/img/p-4.png" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><a href="single-property-1.html"><img src="assets/img/p-5.png" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><a href="single-property-1.html"><img src="assets/img/p-6.png" class="img-fluid mx-auto" alt="" /></a></div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="list_view_flex">
+										
+											<div class="listing-detail-wrapper mt-1">
+												<div class="listing-short-detail-wrap">
+													<div class="_card_list_flex mb-2">
+														<div class="_card_flex_01">
+															<span class="_list_blickes _netork">7 شبکه</span>
+															<span class="_list_blickes types">آپارتمان</span>
+														</div>
+														<div class="_card_flex_last">
+															<h6 class="listing-card-info-price mb-0">1050 میلیون</h6>
+														</div>
+													</div>
+													<div class="_card_list_flex">
+														<div class="_card_flex_01">
+															<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></h4>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="price-features-wrapper">
+												<div class="list-fx-features">
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>4 خوابه
+													</div>
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>2 حمام
+													</div>
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>1000 متر مربع
+													</div>
+												</div>
+											</div>
+											
+											<div class="listing-detail-footer">
+												<div class="footer-first">
+													<div class="foot-rates">
+														<span class="elio_rate perfect">4.7</span>
+														<div class="_rate_stio">
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+														</div>
+													</div>
+												</div>
+												<div class="footer-flex">
+													<a href="property-detail.html" class="prt-view">مشاهده جزئیات</a>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<!-- End Single Property -->
+								
+								<!-- Single Property -->
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+									<div class="property-listing list_view">
+										
+										<div class="listing-img-wrapper">
+											<div class="_exlio_125">برای فروش</div>
+											<div class="list-img-slide">
+												<div class="click">
+													<div><a href="single-property-1.html"><img src="assets/img/p-7.png" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><a href="single-property-1.html"><img src="assets/img/p-8.png" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><a href="single-property-1.html"><img src="assets/img/p-9.png" class="img-fluid mx-auto" alt="" /></a></div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="list_view_flex">
+										
+											<div class="listing-detail-wrapper mt-1">
+												<div class="listing-short-detail-wrap">
+													<div class="_card_list_flex mb-2">
+														<div class="_card_flex_01">
+															<span class="_list_blickes _netork">8 شبکه</span>
+															<span class="_list_blickes types">آپارتمان</span>
+														</div>
+														<div class="_card_flex_last">
+															<h6 class="listing-card-info-price mb-0">870 میلیون</h6>
+														</div>
+													</div>
+													<div class="_card_list_flex">
+														<div class="_card_flex_01">
+															<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></h4>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="price-features-wrapper">
+												<div class="list-fx-features">
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>5 خوابه
+													</div>
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>2 حمام
+													</div>
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>900 متر مربع
+													</div>
+												</div>
+											</div>
+											
+											<div class="listing-detail-footer">
+												<div class="footer-first">
+													<div class="foot-rates">
+														<span class="elio_rate good">4.3</span>
+														<div class="_rate_stio">
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+														</div>
+													</div>
+												</div>
+												<div class="footer-flex">
+													<a href="property-detail.html" class="prt-view">مشاهده جزئیات</a>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<!-- End Single Property -->
+								
+								<!-- Single Property -->
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+									<div class="property-listing list_view">
+										
+										<div class="listing-img-wrapper">
+											<div class="_exlio_125">برای اجاره</div>
+											<div class="list-img-slide">
+												<div class="click">
+													<div><a href="single-property-1.html"><img src="assets/img/p-10.png" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><a href="single-property-1.html"><img src="assets/img/p-11.png" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><a href="single-property-1.html"><img src="assets/img/p-12.png" class="img-fluid mx-auto" alt="" /></a></div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="list_view_flex">
+										
+											<div class="listing-detail-wrapper mt-1">
+												<div class="listing-short-detail-wrap">
+													<div class="_card_list_flex mb-2">
+														<div class="_card_flex_01">
+															<span class="_list_blickes _netork">10 شبکه</span>
+															<span class="_list_blickes types">ویلایی</span>
+														</div>
+														<div class="_card_flex_last">
+															<h6 class="listing-card-info-price mb-0">910 میلیون</h6>
+														</div>
+													</div>
+													<div class="_card_list_flex">
+														<div class="_card_flex_01">
+															<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></h4>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="price-features-wrapper">
+												<div class="list-fx-features">
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>5 خوابه
+													</div>
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>2 حمام
+													</div>
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>900 متر مربع
+													</div>
+												</div>
+											</div>
+											
+											<div class="listing-detail-footer">
+												<div class="footer-first">
+													<div class="foot-rates">
+														<span class="elio_rate perfect">4.8</span>
+														<div class="_rate_stio">
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+														</div>
+													</div>
+												</div>
+												<div class="footer-flex">
+													<a href="property-detail.html" class="prt-view">مشاهده جزئیات</a>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<!-- End Single Property -->
+								
+								<!-- Single Property -->
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+									<div class="property-listing list_view">
+										
+										<div class="listing-img-wrapper">
+											<div class="_exlio_125">برای فروش</div>
+											<div class="list-img-slide">
+												<div class="click">
+													<div><a href="single-property-1.html"><img src="assets/img/p-13.png" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><a href="single-property-1.html"><img src="assets/img/p-14.png" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><a href="single-property-1.html"><img src="assets/img/p-15.png" class="img-fluid mx-auto" alt="" /></a></div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="list_view_flex">
+										
+											<div class="listing-detail-wrapper mt-1">
+												<div class="listing-short-detail-wrap">
+													<div class="_card_list_flex mb-2">
+														<div class="_card_flex_01">
+															<span class="_list_blickes _netork">4 شبکه</span>
+															<span class="_list_blickes types">اداری</span>
+														</div>
+														<div class="_card_flex_last">
+															<h6 class="listing-card-info-price mb-0">740 میلیون</h6>
+														</div>
+													</div>
+													<div class="_card_list_flex">
+														<div class="_card_flex_01">
+															<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></h4>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="price-features-wrapper">
+												<div class="list-fx-features">
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>4 خوابه
+													</div>
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>2 حمام
+													</div>
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>810 متر مربع
+													</div>
+												</div>
+											</div>
+											
+											<div class="listing-detail-footer">
+												<div class="footer-first">
+													<div class="foot-rates">
+														<span class="elio_rate good">4.5</span>
+														<div class="_rate_stio">
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+														</div>
+													</div>
+												</div>
+												<div class="footer-flex">
+													<a href="property-detail.html" class="prt-view">مشاهده جزئیات</a>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<!-- End Single Property -->
+								
+								<!-- Single Property -->
+								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+									<div class="property-listing list_view">
+										
+										<div class="listing-img-wrapper">
+											<div class="_exlio_125">برای اجاره</div>
+											<div class="list-img-slide">
+												<div class="click">
+													<div><a href="single-property-1.html"><img src="assets/img/p-16.png" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><a href="single-property-1.html"><img src="assets/img/p-17.png" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><a href="single-property-1.html"><img src="assets/img/p-18.png" class="img-fluid mx-auto" alt="" /></a></div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="list_view_flex">
+										
+											<div class="listing-detail-wrapper mt-1">
+												<div class="listing-short-detail-wrap">
+													<div class="_card_list_flex mb-2">
+														<div class="_card_flex_01">
+															<span class="_list_blickes _netork">4 شبکه</span>
+															<span class="_list_blickes types">آپارتمان</span>
+														</div>
+														<div class="_card_flex_last">
+															<h6 class="listing-card-info-price mb-0">970 میلیون</h6>
+														</div>
+													</div>
+													<div class="_card_list_flex">
+														<div class="_card_flex_01">
+															<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></h4>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="price-features-wrapper">
+												<div class="list-fx-features">
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>6 خوابه
+													</div>
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>3 حمام
+													</div>
+													<div class="listing-card-info-icon">
+														<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>1200 متر مربع
+													</div>
+												</div>
+											</div>
+											
+											<div class="listing-detail-footer">
+												<div class="footer-first">
+													<div class="foot-rates">
+														<span class="elio_rate perfect">4.8</span>
+														<div class="_rate_stio">
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+															<i class="fa fa-star"></i>
+														</div>
+													</div>
+												</div>
+												<div class="footer-flex">
+													<a href="property-detail.html" class="prt-view">مشاهده جزئیات</a>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+								<!-- End Single Property -->
+								
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>	
+			</section>
+			<!-- ============================ All Property ================================== -->
+			
+			<!-- ============================ Call To Action ================================== -->
+			<section class="theme-bg call_action_wrap-wrap">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							
+							<div class="call_action_wrap">
+								<div class="call_action_wrap-head">
+									<h3>آیا سوالی دارید؟</h3>
+									<span>ما به شما کمک می کنیم تا شغل و پیشرفت خود را افزایش دهید.</span>
+								</div>
+								<a href="#" class="btn btn-call_action_wrap">امروز با ما تماس بگیرید</a>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ============================ Call To Action End ================================== -->
+			
+
+			
+			<!-- Log In Modal -->
+			<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">
+				<div class="modal-dialog modal-xl login-pop-form" role="document">
+					<div class="modal-content overli" id="registermodal">
+						<div class="modal-body p-0">
+							<div class="resp_log_wrap">
+								<div class="resp_log_thumb" style="background:url(assets/img/log.jpg)no-repeat;"></div>
+								<div class="resp_log_caption">
+									<span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
+									<div class="edlio_152">
+										<ul class="nav nav-pills tabs_system center" id="pills-tab" role="tablist">
+										  <li class="nav-item">
+											<a class="nav-link active" id="pills-login-tab" data-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true"><i class="fas fa-sign-in-alt ml-2"></i>ورود</a>
+										  </li>
+										  <li class="nav-item">
+											<a class="nav-link" id="pills-signup-tab" data-toggle="pill" href="#pills-signup" role="tab" aria-controls="pills-signup" aria-selected="false"><i class="fas fa-user-plus ml-2"></i>ثبت نام</a>
+										  </li>
+										</ul>
+									</div>
+									<div class="tab-content" id="pills-tabContent">
+										<div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+											<div class="login-form">
+												<form>
+												
+													<div class="form-group">
+														<label>نام کاربری</label>
+														<div class="input-with-icon">
+															<input type="text" class="form-control">
+															<i class="ti-user"></i>
+														</div>
+													</div>
+													
+													<div class="form-group">
+														<label>کلمه عبور</label>
+														<div class="input-with-icon">
+															<input type="password" class="form-control">
+															<i class="ti-unlock"></i>
+														</div>
+													</div>
+													
+													<div class="form-group">
+														<div class="eltio_ol9">
+															<div class="eltio_k1">
+																<input id="dd" class="checkbox-custom" name="dd" type="checkbox">
+																<label for="dd" class="checkbox-custom-label">مرا به خاطر بسپار</label>
+															</div>	
+															<div class="eltio_k2">
+																<a href="#">کلمه عبور خود را فراموش کرده اید؟</a>
+															</div>	
+														</div>
+													</div>
+													
+													<div class="form-group">
+														<button type="submit" class="btn btn-md full-width pop-login">ورود به سیستم</button>
+													</div>
+												
+												</form>
+											</div>
+										</div>
+										<div class="tab-pane fade" id="pills-signup" role="tabpanel" aria-labelledby="pills-signup-tab">
+											<div class="login-form">
+												<form>
+												
+													<div class="form-group">
+														<label>نام و نام خانوادگی</label>
+														<div class="input-with-icon">
+															<input type="text" class="form-control">
+															<i class="ti-user"></i>
+														</div>
+													</div>
+													
+													<div class="form-group">
+														<label>آدرس ایمیل</label>
+														<div class="input-with-icon">
+															<input type="email" class="form-control">
+															<i class="ti-user"></i>
+														</div>
+													</div>
+													
+													<div class="form-group">
+														<label>کلمه عبور</label>
+														<div class="input-with-icon">
+															<input type="password" class="form-control">
+															<i class="ti-unlock"></i>
+														</div>
+													</div>
+													
+													<div class="form-group">
+														<div class="eltio_ol9">
+															<div class="eltio_k1">
+																<input id="dds" class="checkbox-custom" name="dds" type="checkbox">
+																<label for="dds" class="checkbox-custom-label">با استفاده از وب سایت ، شرایط و ضوابط را می پذیرید</label>
+															</div>	
+														</div>
+													</div>
+													
+													<div class="form-group">
+														<button type="submit" class="btn btn-md full-width pop-login">ثبت نام</button>
+													</div>
+												
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Modal -->
+			
+			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+			
+
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+		{% endblock body %}
