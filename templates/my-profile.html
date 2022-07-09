@@ -83,46 +83,49 @@
 											
 												<div class="form-group col-md-6">
 													<label>نام شما</label>
-													<input name='full_name' type="text" class="form-control" >
+													<input name='full_name' type="text" class="form-control"
+													value="{{ get_object.full_name }}" >
 												</div>
 												
 												<div class="form-group col-md-6">
 													<label>ایمیل</label>
-													<input name='Email' type="email" class="form-control" value="preet77@gmail.com">
+													<input name='Email' type="email" class="form-control" value="{{ get_object.Email }}">
 												</div>
 												
 												<div class="form-group col-md-6">
 													<label>مهارت</label>
-													<input name='semat' type="text" class="form-control" value="طراح وب">
+													<input name='semat' type="text" class="form-control"
+													value="{{ get_object.semat }}" >
 												</div>
 												
 												<div class="form-group col-md-6">
 													<label>تلفن</label>
-													<input name='phone' type="text" class="form-control">
+													<input name='phone' type="text" class="form-control" value="{{ get_object.phone }}" >
 												</div>
 												<div class="form-group col-md-6">
 													<label>تلفن</label>
-													<input name='phone_2' type="text" class="form-control">
+													<input name='phone_2' type="text" class="form-control" value="{{ get_object.phone_2 }}" >
 												</div>
 												
 												<div class="form-group col-md-6">
 													<label>آدرس</label>
-													<input name='address' type="text" class="form-control" value="ایران ، تهران ، زعفرانیه">
+													<input name='address' type="text" class="form-control" value="{{ get_object.address }}">
 												</div>
 												
-												<div class="form-group col-md-6">
+												<div class= "form-group col-md-6">
 													<label>شهر</label>
-													<input name='city' type="text" class="form-control" value="تهران">
+													<input name='city' type="text" class="form-control" value="{{ get_object.city }}" >
 												</div>
 					
 												<div class="form-group col-md-6">
 													<label>کد پستی</label>
-													<input name='code_posty' type="text" class="form-control" value="160052">
+													<input name='code_posty' type="text" class="form-control" value="{{ get_object.code_posty }}">
 												</div>
 												
 												<div class="form-group col-md-12">
 													<label>درباره من</label>
-													<textarea name='about_me' class="form-control">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه</textarea>
+													<input name='about_me' class="form-control"
+												value="{{ get_object.about_me }}"></input>
 												</div>
 												
 											</div>
@@ -136,17 +139,17 @@
 											
 												<div class="form-group col-md-6">
 													<label>whats_app</label>
-													<input name='whats_app' type="text" class="form-control">
+													<input name='whats_app' type="text" class="form-control" value="{{ get_object.whats_app }}">
 												</div>
 												
 												<div class="form-group col-md-6">
 													<label>instagram</label>
-													<input name='insta' type="text" class="form-control" value="https://twitter.com/">
+													<input name='insta' type="text" class="form-control"value="{{ get_object.insta }}">
 												</div>
 												
 												<div class="form-group col-md-6">
 													<label>telegram</label>
-													<input name='telegram' type="text" class="form-control" value="https://googleplus.com/">
+													<input name='telegram' type="text" class="form-control" value="{{ get_object.telegram }}">
 												</div>
 												
 												<div class="form-group col-lg-12 col-md-12 mt-4">

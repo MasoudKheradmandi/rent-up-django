@@ -10,35 +10,33 @@ from django.contrib import messages
 from django.http import HttpResponse
 
 def home(request):
-    if request.method == "POST":
-        form = AuthenticationForm(data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request,user)
-            # try:
-            #     AdminInformation.objects.get(account_id=user.id)              
-            #     return redirect('home:home')
-            # except:
-            #     AdminInformation.objects.create(account=user) 
-            #     return redirect('home:home')
-        else:
-            messages.warning(request,"warning!")
-    else:
-        form = AuthenticationForm()
-    return render(request,'index.html',{'form':form})
+    # if "register" in request.method == "POST":
 
-
-def SignUpView(request):
-    if request.method == "POST":
-            form = UserCreationForm(request.POST)
-
+    #     return render(request,'index.html',{'form':form})
+    if  request.method == "POST":
+        if request.POST.get('submit') == 'sign_in':
+            form = AuthenticationForm(data=request.POST)
             if form.is_valid():
+                user = form.get_user()
+                login(request,user)
+            else:
+                messages.warning(request,"warning!")
+        elif request.POST.get('submit') == 'register' :
+            print('vorod')
+            form = UserCreationForm(request.POST)
+            if form.is_valid():
+                print("formisvalid")
                 user=form.save()
                 login(request , user)
                 return HttpResponse("User been created!")
-        
-    form = UserCreationForm()
-    return render(request,'signup.html',{'form':form})
+            else:
+                messages.warning(request,"warning!")
+    else :
+        form = UserCreationForm()
+    return render(request,'index.html',{})
+
+
+
 
 def LogOut(request):
 	logout(request)

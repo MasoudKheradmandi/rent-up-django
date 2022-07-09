@@ -1727,9 +1727,7 @@
 											<div class="login-form">
 												<form method="post">
 												{% csrf_token %}
-												{% for message in messages %}
-    <script src="{% static 'assets/js/alert.js' %}"></script>
-    {% endfor %}
+
 													 <div class="form-group">
 														<label>نام کاربری</label>
 														<div class="input-with-icon">
@@ -1761,7 +1759,7 @@
 													 
 													 
 													<div class="form-group">
-														<button type="submit" class="btn btn-md full-width pop-login">ورود به سیستم</button>
+														<button  name='submit' type="submit" class="btn btn-md full-width pop-login" value='sign_in'>ورود به سیستم</button>
 													</div>
 												
 												</form>
@@ -1769,20 +1767,12 @@
 										</div>
 										<div class="tab-pane fade" id="pills-signup" role="tabpanel" aria-labelledby="pills-signup-tab">
 											<div class="login-form">
-												<form>
-												
+												<form method="post">
+													{% csrf_token %}
 													<div class="form-group">
 														<label>نام و نام خانوادگی</label>
 														<div class="input-with-icon">
-															<input type="text" class="form-control">
-															<i class="ti-user"></i>
-														</div>
-													</div>
-													
-													<div class="form-group">
-														<label>آدرس ایمیل</label>
-														<div class="input-with-icon">
-															<input type="email" class="form-control">
+															<input name="username" type="text" class="form-control">
 															<i class="ti-user"></i>
 														</div>
 													</div>
@@ -1790,22 +1780,22 @@
 													<div class="form-group">
 														<label>کلمه عبور</label>
 														<div class="input-with-icon">
-															<input type="password" class="form-control">
+															<input name="password1" type="password" class="form-control">
+															<i class="ti-user"></i>
+														</div>
+													</div>
+													
+													<div class="form-group">
+														<label>تایید کلمه عبور</label>
+														<div class="input-with-icon">
+															<input name="password2" type="password" class="form-control">
 															<i class="ti-unlock"></i>
 														</div>
 													</div>
 													
+
 													<div class="form-group">
-														<div class="eltio_ol9">
-															<div class="eltio_k1">
-																<input id="dds" class="checkbox-custom" name="dds" type="checkbox">
-																<label for="dds" class="checkbox-custom-label">با استفاده از وب سایت ، شرایط و ضوابط را می پذیرید</label>
-															</div>	
-														</div>
-													</div>
-													
-													<div class="form-group">
-														<button type="submit" class="btn btn-md full-width pop-login">ثبت نام</button>
+														<button name='submit' value='register' type="submit" class="btn btn-md full-width pop-login">ثبت نام</button>
 													</div>
 												
 												</form>

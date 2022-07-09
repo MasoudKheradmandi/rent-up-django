@@ -4,9 +4,9 @@ from django.contrib.auth.models import User
 
 class AdminInformation(models.Model):
     account = models.OneToOneField(User,on_delete=models.CASCADE,null=True)
-    full_name = models.CharField(max_length=300,unique=True,)
+    full_name = models.CharField(max_length=300,)
     Email = models.EmailField(max_length=350)
-    phone = models.CharField(max_length=11,unique=True,verbose_name="تلفن اول")
+    phone = models.CharField(max_length=11,verbose_name="تلفن اول")
     phone_2 = models.CharField(max_length=11,null=True,blank=True, unique=True,verbose_name="تلفن دوم")
     semat = models.CharField(max_length=100,default='مشاور فروش',verbose_name="سمت")
     address = models.CharField(max_length=300)
@@ -15,9 +15,9 @@ class AdminInformation(models.Model):
     image = models.ImageField(verbose_name="عکس")
 
 
-    insta = models.CharField(max_length=500,unique=True,null=True,blank=True)
-    whats_app = models.CharField(max_length=500,unique=True,null=True,blank=True)
-    telegram = models.CharField(max_length=500,unique=True,null=True,blank=True)
+    insta = models.CharField(max_length=500,null=True,blank=True)
+    whats_app = models.CharField(max_length=500,null=True,blank=True)
+    telegram = models.CharField(max_length=500,null=True,blank=True)
 
     about_me = models.TextField()
 
