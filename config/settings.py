@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home',
     'admin_informations',
     'account',
+    'posts',
 ]
 
 MIDDLEWARE = [

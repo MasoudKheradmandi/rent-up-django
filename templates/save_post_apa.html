@@ -31,6 +31,7 @@
 			<!-- ============================ Page Title End ================================== -->
 			
 			<!-- ============================ User Dashboard ================================== -->
+
 			<section class="gray pt-5 pb-5">
 				<div class="container-fluid">
 								
@@ -79,7 +80,7 @@
 										<div class="col-lg-12 col-md-12">
 										
 											<div class="submit-page">
-												
+											<form  method='post' enctype="multipart/form-data">
 												<!-- Basic Information -->
 												<div class="frm_submit_block">	
 													<h3>اطلاعات اولیه</h3>
@@ -88,20 +89,20 @@
 														
 															<div class="form-group col-md-12">
 																<label>عنوان ملک<a href="#" class="tip-topdata" data-tip="عنوان ملک"><i class="ti-help"></i></a></label>
-																<input type="text" class="form-control">
+																<input name='titr' type="text" maxlength="150" class="form-control">
 															</div>
 															
 															<div class="form-group col-md-6">
 																<label>وضعیت</label>
-																<select id="status" class="form-control">
+																<select name='status_buy' id="status" class="form-control">
 																	<option value="">&nbsp;</option>
-																	<option value="1">برای اجاره</option>
-																	<option value="2">برای فروش</option>
+																	<option value="برای خرید">برای خرید</option>
+																	<option value="برای رهن و اجاره">برای رهن و اجاره</option>
 																</select>
 															</div>
 															
 															<div class="form-group col-md-6">
-																<label>نوع ملک</label>
+																{% comment %} <label>نوع ملک</label>
 																<select id="ptypes" class="form-control">
 																	<option value="">&nbsp;</option>
 																	<option value="1">خانه</option>
@@ -110,22 +111,29 @@
 																	<option value="4">تجاری</option>
 																	<option value="5">اداری</option>
 																	<option value="6">گاراژ</option>
-																</select>
+																</select> {% endcomment %}
 															</div>
 															
 															<div class="form-group col-md-6">
 																<label>قیمت</label>
-																<input type="text" class="form-control" placeholder="تومان">
+																<input name="gheymat" type="number" class="form-control" placeholder="تومان">
 															</div>
-															
+															<div class="form-group col-md-6">
+																<label>gheymat_rahn</label>
+																<input name="gheymat_rahn" type="number" class="form-control" placeholder="تومان">
+															</div>
+															<div class="form-group col-md-6">
+																<label>Gheymat ejare:</label>
+																<input name='gheymat_ejare' type="number" class="form-control" placeholder="تومان">
+															</div>
 															<div class="form-group col-md-6">
 																<label>منطقه</label>
-																<input type="text" class="form-control">
+																<input name="locations" type="text" class="form-control">
 															</div>
 															
 															<div class="form-group col-md-6">
 																<label>اتاق خواب</label>
-																<select id="bedrooms" class="form-control">
+																<select name='tedad_otagh' id="bedrooms" class="form-control">
 																	<option value="">&nbsp;</option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
@@ -136,8 +144,8 @@
 															</div>
 															
 															<div class="form-group col-md-6">
-																<label>حمام</label>
-																<select id="bathrooms" class="form-control">
+																<label>service</label>
+																<select name="tedad_dastshoe" id="bathrooms" class="form-control">
 																	<option value="">&nbsp;</option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
@@ -159,7 +167,8 @@
 														
 															<div class="form-group col-md-12">
 																<label>بارگذاری گالری</label>
-																<form action="#" class="dropzone dz-clickable primary-dropzone">
+																<form
+																action="" class="dropzone dz-clickable primary-dropzone">
 																	<div class="dz-default dz-message">
 																		<i class="ti-gallery"></i>
 																		<span>برای تغییر لوگو بکشید و رها کنید</span>
@@ -346,7 +355,7 @@
 												<div class="form-group col-lg-12 col-md-12">
 													<button class="btn btn-theme" type="submit">ارسال و پیشنمایش</button>
 												</div>
-															
+											</form>			
 											</div>
 										</div>
 										
@@ -360,11 +369,18 @@
 						
 					</div>
 				</div>
-			</section>
+			</section> 
+
 			<!-- ============================ User Dashboard End ================================== -->
 			
-
-			
+{% comment %} <form method='post' enctype="multipart/form-data">
+	{% csrf_token %}
+	{{form.as_p}}
+	<button value='save' type='submit'>
+		save
+	</button>
+</form>
+			 {% endcomment %}
 			<!-- Log In Modal -->
 			<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">
 				<div class="modal-dialog modal-xl login-pop-form" role="document">
