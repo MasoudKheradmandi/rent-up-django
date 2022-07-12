@@ -48,7 +48,21 @@ class aparteman(models.Model):
         default=timezone.now, verbose_name='زمان ثبت')
     vise = models.BooleanField(default=False, verbose_name='ویژه؟')
     active = models.BooleanField(default=True, verbose_name='نمایش داده شود؟')
-
+    
+    
+    #--------------------BooleanField
+    tahvie = models.BooleanField(default=False)
+    internet = models.BooleanField(default=False)
+    trass = models.BooleanField(default=False)
+    wifi = models.BooleanField(default=False)
+    bed = models.BooleanField(default=False)
+    micro = models.BooleanField(default=False)
+    balcony = models.BooleanField(default=False)
+    sahel = models.BooleanField(default=False)
+    system_garmayeshi= models.BooleanField(default=False)
+    sigary = models.BooleanField(default=False)
+    parking = models.BooleanField(default=False)
+    #-----------------------    
     def __str__(self):
         return self.titr
 

@@ -1,7 +1,6 @@
 from email.policy import default
 from secrets import choice
 from django import forms
-from matplotlib import image
 
 class SaveFormAparteman(forms.Form):
     STATUS_BUY = (
@@ -33,3 +32,18 @@ class SaveFormAparteman(forms.Form):
     # map_1 = 
     image = forms.ImageField()
     active = forms.BooleanField(required=False)
+    
+    
+    #-----------------------------
+    tahvie = forms.BooleanField(required=False)
+    internet = forms.BooleanField(required=False)
+    trass = forms.BooleanField(required=False)
+    wifi = forms.BooleanField(required=False)
+    bed = forms.BooleanField(required=False)
+    micro = forms.BooleanField(required=False)
+    balcony = forms.BooleanField(required=False)
+    sahel = forms.BooleanField(required=False)
+    system_garmayeshi= forms.BooleanField(required=False)
+    sigary = forms.BooleanField(required=False)
+    parking = forms.BooleanField(required=False)
+    #-----------------------------------------

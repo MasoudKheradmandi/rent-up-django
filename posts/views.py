@@ -5,6 +5,7 @@ from .models import aparteman
 # Create your views here.
 def save_post(request):
     nevisande = request.user
+    print(nevisande)
     if request.method == "POST":
         form = SaveFormAparteman(request.POST , request.FILES)
         if form.is_valid():
@@ -27,11 +28,23 @@ def save_post(request):
             tozihat_khososy= form.cleaned_data['tozihat_khososy']
             image= form.cleaned_data['image']
             active= form.cleaned_data['active']
+            tahvie = form.cleaned_data['tahvie']
+            internet = form.cleaned_data['internet']
+            trass = form.cleaned_data['trass']
+            wifi = form.cleaned_data['wifi']
+            bed = form.cleaned_data['bed']
+            micro = form.cleaned_data['micro']
+            balcony = form.cleaned_data['balcony']
+            sahel = form.cleaned_data['sahel']
+            system_garmayeshi= form.cleaned_data['system_garmayeshi']
+            sigary = form.cleaned_data['sigary']
+            parking = form.cleaned_data['parking']
             x=aparteman.objects.create(
                 titr=titr,status_buy=status_buy,gheymat=gheymat,gheymat_rahn=gheymat_rahn,gheymat_ejare=gheymat_ejare,locations=locations,sanad=sanad,andaze=andaze,tabaghe=tabaghe,
                 tedad_tabaghe=tedad_tabaghe,tedad_vahed_tabaghe=tedad_vahed_tabaghe,tedad_otagh=tedad_otagh,
                 tedad_dastshoe=tedad_dastshoe,sal_sakht=sal_sakht,ghabel_moaveze=ghabel_moaveze,tozihat_karbar=tozihat_karbar,
-                tozihat_khososy=tozihat_khososy,image=image,active=active,nevisande=nevisande
+                tozihat_khososy=tozihat_khososy,image=image,active=active,
+                internet=internet,trass=trass,wifi=wifi,bed=bed,micro=micro,balcony=balcony,sahel=sahel,system_garmayeshi=system_garmayeshi,sigary=sigary,parking=parking,tahvie=tahvie,nevisande=nevisande
             )
             x.save()
         return HttpResponse('Finish')
