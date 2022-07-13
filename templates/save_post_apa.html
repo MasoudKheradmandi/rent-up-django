@@ -80,18 +80,18 @@
 										<div class="col-lg-12 col-md-12">
 										
 											<div class="submit-page">
-											<form  method='post' enctype="multipart/form-data">
+											 <form  method='post' enctype="multipart/form-data">
 												{% csrf_token %}
-
+											
 												<!-- Basic Information -->
-												<div class="frm_submit_block">	
+											 <div class="frm_submit_block">	
 													<h3>اطلاعات اولیه</h3>
 													<div class="frm_submit_wrap">
 														<div class="form-row">
 														
 															<div class="form-group col-md-12">
-																<label>عنوان ملک<a href="#" class="tip-topdata" data-tip="عنوان ملک"><i class="ti-help"></i></a></label>
-																<input name='titr' type="text" maxlength="150" class="form-control">
+																<label for="id_titr">عنوان ملک<a href="#" class="tip-topdata" data-tip="عنوان ملک"><i class="ti-help"></i></a></label>
+																<input  type="text" name="titr" maxlength="150" required id="id_titr" class="form-control">
 															</div>
 															
 															<div class="form-group col-md-6">
@@ -103,7 +103,7 @@
 																</select>
 															</div>
 															
-															<div class="form-group col-md-6">
+															{% comment %} <div class="form-group col-md-6">
 																<label>نوع ملک</label>
 																<select id="ptypes" class="form-control">
 																	<option value="">&nbsp;</option>
@@ -114,10 +114,26 @@
 																	<option value="5">اداری</option>
 																	<option value="6">گاراژ</option>
 																</select> 
-															</div>
+															</div> {% endcomment %}
 															
 															<div class="form-group col-md-6">
-																<label>قیمت</label>
+																<label for="id_gheymat">اندازه</label>
+																<input name="andaze" type="number" class="form-control" placeholder="تومان">
+															</div>
+															<div class="form-group col-md-6">
+																<label for="id_gheymat">طبقه</label>
+																<input name="tabaghe" type="number" class="form-control" placeholder="تومان">
+															</div>
+															<div class="form-group col-md-6">
+																<label for="id_gheymat">tedad_tabaghe</label>
+																<input name="tedad_tabaghe" type="number" class="form-control" placeholder="تومان">
+															</div>
+															<div class="form-group col-md-6">
+																<label for="id_gheymat">tedad_vahed_tabaghe</label>
+																<input name="tedad_vahed_tabaghe" type="number" class="form-control" placeholder="تومان">
+															</div>
+															<div class="form-group col-md-6">
+																<label for="id_gheymat">قیمت</label>
 																<input name="gheymat" type="number" class="form-control" placeholder="تومان">
 															</div>
 															<div class="form-group col-md-6">
@@ -128,34 +144,31 @@
 																<label>Gheymat ejare:</label>
 																<input name='gheymat_ejare' type="number" class="form-control" placeholder="تومان">
 															</div>
+														
 															<div class="form-group col-md-6">
 																<label>منطقه</label>
 																<input name="locations" type="text" class="form-control">
 															</div>
 															
-															<div class="form-group col-md-6">
-																<label>اتاق خواب</label>
-																<select name='tedad_otagh' id="bedrooms" class="form-control">
-																	<option value="">&nbsp;</option>
-																	<option value="1">1</option>
-																	<option value="2">2</option>
-																	<option value="3">3</option>
-																	<option value="4">4</option>
-																	<option value="5">5</option>
-																</select>
-															</div>
+															
+															
+															
+															
 															
 															<div class="form-group col-md-6">
-																<label>service</label>
-																<select name="tedad_dastshoe" id="bathrooms" class="form-control">
-																	<option value="">&nbsp;</option>
-																	<option value="1">1</option>
-																	<option value="2">2</option>
-																	<option value="3">3</option>
-																	<option value="4">4</option>
-																	<option value="5">5</option>
+																<label for="id_sanad">سند:</label>
+																<select name="sanad" id="bedrooms" class="form-control">
+																	<option value="شش دانگ">شش دانگ</option>
+																	<option value="مشاع">مشاع</option>
+																	<option value="اصلاحات ارضی">اصلاحات ارضی</option>
 																</select>
 															</div>
+															<div class="form-group col-md-6">
+																<label>tedad_dastshoe</label>
+																<input name="tedad_dastshoe" type="number" class="form-control">
+															</div>
+															
+															
 															
 														</div>
 													</div>
@@ -169,13 +182,15 @@
 										<div class="form-row">
 										
 											<div class="form-group col-md-12">
-												<label>آپلود گالری</label>
+												<label>
+													<i class="ti-gallery"></i>
+													<span>برای تغییر عکس ها بکشید و رها کنید</span>
+												</label>
 												
-													<div class="dz-default dz-message dropzone dz-clickable primary-dropzone">
-														<i class="ti-gallery"></i>
-														<span>برای تغییر لوگو بکشید و رها کنید</span>
+													<div >
+														<input type="file" name="image" accept="image/*" class="dz-default dz-message dropzone dz-clickable primary-dropzone" >
 													</div>
-											
+												
 											</div>
 											
 										</div>
@@ -188,28 +203,33 @@
 													<h3>اطلاعات دقیق</h3>
 													<div class="frm_submit_wrap">
 														<div class="form-row">
-														
+												
 															<div class="form-group col-md-12">
 																<label>توضیحات</label>
-																<textarea class="form-control h-120"></textarea>
+																<textarea name="tozihat_karbar" class="form-control h-120"></textarea>
+															</div>
+															<div class="form-group col-md-12">
+																<label> توضیحات خصوصی</label>
+																<textarea name="tozihat_khososy" class="form-control h-120"></textarea>
 															</div>
 															
 															<div class="form-group col-md-4">
-																<label>سن ساختمان (اختیاری)</label>
-																<select id="bage" class="form-control">
+																<label>سن ساختمان </label>
+																<select name = "sal_sakht"id="bage" class="form-control">
 																	<option value="">&nbsp;</option>
-																	<option value="1">0 - 5 سال</option>
-																	<option value="2">0 - 10 سال</option>
-																	<option value="3">0 - 15 سال</option>
-																	<option value="4">0 - 20 سال</option>
-																	<option value="5">20+ سال</option>
+																	<option value="0-5">0-5</option>
+																	<option value="5-10">5-10</option>
+																	<option value="10-20">10-20</option>
+																	<option value="20+">20+</option>
+															
 																</select>
 															</div>
 															
 															<div class="form-group col-md-4">
-																<label>پارکینگ (اختیاری)</label>
-																<select id="garage" class="form-control">
+																<label>پارکینگ </label>
+																<select name ="parking" id="garage" class="form-control">
 																	<option value="">&nbsp;</option>
+																	<option value="0">0</option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
 																	<option value="3">3</option>
@@ -219,14 +239,15 @@
 															</div>
 															
 															<div class="form-group col-md-4">
-																<label>اتاق ها (اختیاری)</label>
-																<select id="rooms" class="form-control">
+																<label>اتاق ها </label>
+																<select name="tedad_otagh" id="rooms" class="form-control">
 																	<option value="">&nbsp;</option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
 																	<option value="3">3</option>
 																	<option value="4">4</option>
 																	<option value="5">5</option>
+																	<option value="6">6</option>
 																</select>
 															</div>
 															
@@ -235,51 +256,51 @@
 																<div class="o-features">
 																	<ul class="no-ul-list third-row">
 																		<li>
-																			<input id="a-1" class="checkbox-custom" name="a-1" type="checkbox">
+																			<input id="a-1" class="checkbox-custom" name="tahvie" type="checkbox">
 																			<label for="a-1" class="checkbox-custom-label">تهویه کننده هوا</label>
 																		</li>
 																		<li>
-																			<input id="a-2" class="checkbox-custom" name="a-2" type="checkbox">
+																			<input id="a-2" class="checkbox-custom" name="bed" type="checkbox">
 																			<label for="a-2" class="checkbox-custom-label">تختواب</label>
 																		</li>
 																		<li>
-																			<input id="a-3" class="checkbox-custom" name="a-3" type="checkbox">
+																			<input id="a-3" class="checkbox-custom" name="system_garmayeshi" type="checkbox">
 																			<label for="a-3" class="checkbox-custom-label">سیستم گرمایشی</label>
 																		</li>
 																		<li>
-																			<input id="a-4" class="checkbox-custom" name="a-4" type="checkbox">
+																			<input id="a-4" class="checkbox-custom" name="internet" type="checkbox">
 																			<label for="a-4" class="checkbox-custom-label">اینترنت</label>
 																		</li>
 																		<li>
-																			<input id="a-5" class="checkbox-custom" name="a-5" type="checkbox">
+																			<input id="a-5" class="checkbox-custom" name="micro" type="checkbox">
 																			<label for="a-5" class="checkbox-custom-label">مایکروویو</label>
 																		</li>
 																		<li>
-																			<input id="a-6" class="checkbox-custom" name="a-6" type="checkbox">
+																			<input id="a-6" class="checkbox-custom" name="sigary" type="checkbox">
 																			<label for="a-6" class="checkbox-custom-label">سیگار کشیدن</label>
 																		</li>
 																		<li>
-																			<input id="a-7" class="checkbox-custom" name="a-7" type="checkbox">
+																			<input id="a-7" class="checkbox-custom" name="trass" type="checkbox">
 																			<label for="a-7" class="checkbox-custom-label">تراس</label>
 																		</li>
 																		<li>
-																			<input id="a-8" class="checkbox-custom" name="a-8" type="checkbox">
+																			<input id="a-8" class="checkbox-custom" name="balcony" type="checkbox">
 																			<label for="a-8" class="checkbox-custom-label">بالکن</label>
 																		</li>
 																		<li>
-																			<input id="a-9" class="checkbox-custom" name="a-9" type="checkbox">
-																			<label for="a-9" class="checkbox-custom-label">نماد</label>
+																			<input id="a-9" class="checkbox-custom" name="active" type="checkbox">
+																			<label for="a-9" class="checkbox-custom-label">نمایش داده شود؟</label>
 																		</li>
 																		<li>
-																			<input id="a-10" class="checkbox-custom" name="a-10" type="checkbox">
+																			<input id="a-10" class="checkbox-custom" name="wifi" type="checkbox">
 																			<label for="a-10" class="checkbox-custom-label">وای فای</label>
 																		</li>
 																		<li>
-																			<input id="a-11" class="checkbox-custom" name="a-11" type="checkbox">
+																			<input id="a-11" class="checkbox-custom" name="sahel" type="checkbox">
 																			<label for="a-11" class="checkbox-custom-label">ساحل دریا</label>
 																		</li>
 																		<li>
-																			<input id="a-12" class="checkbox-custom" name="a-12" type="checkbox">
+																			<input id="a-12" class="checkbox-custom" name="parking" type="checkbox">
 																			<label for="a-12" class="checkbox-custom-label">پارکینگ</label>
 																		</li>
 																	</ul>
@@ -289,9 +310,9 @@
 														</div>
 													</div>
 												</div>
-												
+												 
 												<!-- Contact Information -->
-												<div class="frm_submit_block">	
+											{% comment %} <div class="frm_submit_block">	
 													<h3>اطلاعات تماس</h3>
 													<div class="frm_submit_wrap">
 														<div class="form-row">
@@ -313,24 +334,14 @@
 															
 														</div>
 													</div>
-												</div>
-												
-												<div class="form-group col-lg-12 col-md-12">
-													<label>توافقنامه GDPR *</label>
-													<ul class="no-ul-list">
-														<li>
-															<input id="aj-1" class="checkbox-custom" name="aj-1" type="checkbox">
-															<label for="aj-1" class="checkbox-custom-label">من موافقت می کنم که این وب سایت اطلاعات ارسالی من را ذخیره کند تا آنها بتوانند به درخواست من پاسخ دهند.</label>
-														</li>
-													</ul>
-												</div>
-												
-												<div class="form-group col-lg-12 col-md-12">
-													<button class="btn btn-theme" type="submit">ارسال و پیشنمایش</button>
+													{% endcomment %}
 												</div> 
-												<button type='submit' value='save'>
-													save
-												</button>
+												
+												
+												<div class="form-group col-lg-12 col-md-12">
+													<button class="btn btn-theme" value="save" type="submit">ارسال و پیشنمایش</button>
+												</div> 
+												 
 											</form>			
 											</div>
 										</div>
@@ -349,14 +360,7 @@
 
 			<!-- ============================ User Dashboard End ================================== -->
 			
-{% comment %} <form method='post' enctype="multipart/form-data">
-	{% csrf_token %}
-	{{form.as_p}}
-	<button value='save' type='submit'>
-		save
-	</button>
-</form>
-			 {% endcomment %}
+			 
 			<!-- Log In Modal -->
 			<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">
 				<div class="modal-dialog modal-xl login-pop-form" role="document">

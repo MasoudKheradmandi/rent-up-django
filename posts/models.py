@@ -12,7 +12,12 @@ class aparteman(models.Model):
         ('مشاع', 'مشاع'),
         ('اصلاحات ارضی', 'اصلاحات ارضی'),
     )
-
+    SAL_SAKHT = (
+        ('0-5','0-5'),
+        ('5-10','5-10'),
+        ('10-20','10-20'),
+        ('20+','20+')
+    )
     titr = models.CharField(max_length=150, verbose_name='تیتر')
     nevisande = models.ForeignKey(
         User, on_delete=models.CASCADE, verbose_name='نویسنده')
@@ -28,15 +33,15 @@ class aparteman(models.Model):
     locations = models.TextField(verbose_name='ادرس اپارتمان')
     sanad = models.CharField(
         max_length=32, choices=SANAD_CHOICES, default='شش دانگ', verbose_name='نوع سند')
-    andaze = models.PositiveSmallIntegerField(verbose_name='متراژ')
-    tabaghe = models.CharField(max_length=2, verbose_name='طبقه')
+    andaze = models.PositiveSmallIntegerField(verbose_name='متراژ',default=0)
+    tabaghe = models.PositiveIntegerField(max_length=2, verbose_name='طبقه')
     tedad_tabaghe = models.PositiveSmallIntegerField(verbose_name='تعداد طبقه')
     tedad_vahed_tabaghe = models.PositiveSmallIntegerField(
-        verbose_name='تعداد واحد در هر طبقه')
+        verbose_name='تعداد واحد در هر طبقه',default=0)
     tedad_otagh = models.CharField(max_length=2, verbose_name='تعداد اتاق')
     tedad_dastshoe = models.PositiveSmallIntegerField(
         verbose_name='تعداد سرویس بهداشتی')
-    sal_sakht = models.PositiveSmallIntegerField(verbose_name='چند سال ساخت')
+    sal_sakht = models.CharField(max_length=10, choices=SAL_SAKHT,default="0-5")
     ghabel_moaveze = models.BooleanField(
         default=False, verbose_name='قابل معاوضه؟')
     tozihat_karbar = models.TextField(verbose_name='توضیحات کاربر')
@@ -46,6 +51,7 @@ class aparteman(models.Model):
     image = models.ImageField(verbose_name='عکس اصلی')
     upload_time = models.DateField(
         default=timezone.now, verbose_name='زمان ثبت')
+    parking = models.CharField(max_length=2,default="0")
     vise = models.BooleanField(default=False, verbose_name='ویژه؟')
     active = models.BooleanField(default=True, verbose_name='نمایش داده شود؟')
     
@@ -61,7 +67,6 @@ class aparteman(models.Model):
     sahel = models.BooleanField(default=False)
     system_garmayeshi= models.BooleanField(default=False)
     sigary = models.BooleanField(default=False)
-    parking = models.BooleanField(default=False)
     #-----------------------    
     def __str__(self):
         return self.titr

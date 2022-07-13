@@ -7,6 +7,12 @@ class SaveFormAparteman(forms.Form):
         ('برای خرید', 'برای خرید'),
         ('برای رهن و اجاره', 'برای رهن و اجاره'),
     )
+    SAL_SAKHT = (
+        ('0-5','0-5'),
+        ('5-10','5-10'),
+        ('10-20','10-20'),
+        ('20+','20+')
+    )
     SANAD_CHOICES = (
         ('شش دانگ', 'شش دانگ'),
         ('مشاع', 'مشاع'),
@@ -25,10 +31,10 @@ class SaveFormAparteman(forms.Form):
     tedad_vahed_tabaghe = forms.IntegerField()
     tedad_otagh = forms.IntegerField()
     tedad_dastshoe = forms.IntegerField()
-    sal_sakht = forms.IntegerField()
+    sal_sakht = forms.ChoiceField(choices=SAL_SAKHT)
     ghabel_moaveze = forms.BooleanField(required=False)
-    tozihat_karbar = forms.CharField(max_length=500)
-    tozihat_khososy = forms.CharField(max_length=500)
+    tozihat_karbar = forms.CharField(widget=forms.Textarea())
+    tozihat_khososy = forms.CharField(widget=forms.Textarea())
     # map_1 = 
     image = forms.ImageField()
     active = forms.BooleanField(required=False)

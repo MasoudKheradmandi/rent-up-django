@@ -44,7 +44,7 @@ def save_post(request):
                 tedad_tabaghe=tedad_tabaghe,tedad_vahed_tabaghe=tedad_vahed_tabaghe,tedad_otagh=tedad_otagh,
                 tedad_dastshoe=tedad_dastshoe,sal_sakht=sal_sakht,ghabel_moaveze=ghabel_moaveze,tozihat_karbar=tozihat_karbar,
                 tozihat_khososy=tozihat_khososy,image=image,active=active,
-                internet=internet,trass=trass,wifi=wifi,bed=bed,micro=micro,balcony=balcony,sahel=sahel,system_garmayeshi=system_garmayeshi,sigary=sigary,parking=parking,tahvie=tahvie,nevisande=nevisande
+                internet=internet,trass=trass,wifi=wifi,bed=bed,micro=micro,balcony=balcony,sahel=sahel,system_garmayeshi=system_garmayeshi,sigary=sigary,parking=parking,tahvie=tahvie,nevisande=nevisande,
             )
             x.save()
         return HttpResponse('Finish')
