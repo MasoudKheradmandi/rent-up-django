@@ -296,18 +296,18 @@
 												<div class="listing-short-detail-wrap">
 													<div class="_card_list_flex mb-2">
 														<div class="_card_flex_01">
-															<span class="_list_blickes _netork">6 شبکه</span>
-															<span class="_list_blickes types">خانوادگی</span>
-														</div>
+															{% if post.status_buy == "برای خرید" %}
+															<span class="_list_blickes _netork">{{post.gheymat}} تومان</span>
+															{% elif post.status_buy == "برای رهن و اجاره" %}
+															<span class="_list_blickes types">{{post.gheymat_rahn}}<br> رهن </span>
+															<span class="_list_blickes types">{{post.gheymat_ejare}}<br>اجاره</span>
+															{% endif %}
+															</div>
 														<div class="_card_flex_last">
 															<h6 class="listing-card-info-price mb-0">
-															{% if post.status_buy == "برای خرید" %}
-															{{post.gheymat}} تومان
-															{% elif post.status_buy == "برای رهن و اجاره" %}
 															
-															{{post.gheymat_rahn}} رهن   <br> {{post.gheymat_ejare}} اجاره
 														
-															{% endif %}
+															
 														</h6>
 														</div>
 													</div>
@@ -326,13 +326,13 @@
 											<div class="price-features-wrapper">
 												<div class="list-fx-features">
 													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="{% static 'assets/img/bed.svg'%}" width="13" alt="" /></div>{{post.tedad_otagh}} خوابه
+														<div class="inc-fleat-icon"><img src="{% static 'assets/img/bed.svg'%}" width="13" alt="" /></div>{{post.tedad_otagh}}خوابه
 													</div>
 													<div class="listing-card-info-icon">
 														<div class="inc-fleat-icon"><img src="{% static 'assets/img/bathtub.svg'%}" width="13" alt="" /></div>{{post.tedad_dastshoe}} سرویس
 													</div>
 													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="{% static 'assets/img/move.svg'%}" width="13" alt="" /></div>{{post.andaze}} متر مربع
+														<div class="inc-fleat-icon"><img src="{% static 'assets/img/move.svg'%}" width="13" alt="" /></div>{{post.andaze}}مترمربع
 													</div>
 												</div>
 											</div>

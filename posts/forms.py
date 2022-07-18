@@ -70,7 +70,7 @@ class SavePostvillae(forms.Form):
     SANAD_CHOICES = (
         ('شش دانگ', 'شش دانگ'),
         ('مشاع', 'مشاع'),
-        ('اصلاخات ارضی', 'اصلاحات ارضی'),
+        ('اصلاحات ارضی', 'اصلاحات ارضی'),
     )
     titr = forms.CharField(max_length=300)
     status_buy = forms.ChoiceField(choices = STATUS_BUY)

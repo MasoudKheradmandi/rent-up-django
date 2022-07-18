@@ -51,7 +51,7 @@ class aparteman(models.Model):
     image = models.ImageField(verbose_name='عکس اصلی',null=True,blank=True)
     upload_time = models.DateField(
         default=timezone.now, verbose_name='زمان ثبت')
-    parking = models.CharField(max_length=2)
+    parking = models.CharField(max_length=2,null=True)
     vise = models.BooleanField(default=False, verbose_name='ویژه؟')
     active = models.BooleanField(default=True, verbose_name='نمایش داده شود؟')
     
@@ -95,7 +95,7 @@ class vilae(models.Model):
     SANAD_CHOICES = (
         ('شش دانگ', 'شش دانگ'),
         ('مشاع', 'مشاع'),
-        ('اصلاخات ارضی', 'اصلاحات ارضی'),
+        ('اصلاحات ارضی', 'اصلاحات ارضی'),
     )
 
     titr = models.CharField(max_length=300, verbose_name="تیتر")
@@ -131,7 +131,7 @@ class vilae(models.Model):
         default=timezone.now, verbose_name="زمان ثبت")
     vise = models.BooleanField(default=False, verbose_name="ویژه؟")
     active = models.BooleanField(default=True, verbose_name="نمایش؟")
-    parking = models.PositiveSmallIntegerField(null=True)
+    parking = models.CharField(max_length=2,null=True)
 
 
 
