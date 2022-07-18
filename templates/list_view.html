@@ -28,16 +28,16 @@
 							
 								<div class="col-lg-3 col-md-6 col-sm-12  col-sm-6">
 									<ul class="shorting_grid">
-										<li class="list-inline-item"><a href="grid-layout-with-sidebar.html" class="active"><span class="ti-layout-grid2"></span>شبکه ای</a></li>
-										<li class="list-inline-item"><a href="list-layout-with-sidebar.html"><span class="ti-view-list"></span>لیستی</a></li>
-										<li class="list-inline-item"><a href="#"><span class="ti-map-alt"></span>نقشه</a></li>
+										{% comment %} <li class="list-inline-item"><a href="grid-layout-with-sidebar.html" class="active"><span class="ti-layout-grid2"></span>شبکه ای</a></li>
+										<li class="list-inline-item"><a href="#"><span class="ti-map-alt"></span>نقشه</a></li> {% endcomment %}
+										<li class="list-inline-item"><a><span class="ti-view-list"></span>لیستی</a></li>
 									</ul>
 								</div>
 						
 								<div class="col-lg-6 col-md-12 col-sm-12 order-lg-2 order-md-3 elco_bor col-sm-12">
 									<div class="shorting_pagination">
 										<div class="shorting_pagination_laft">
-											<h5>نمایش 1-25 از 72 نتیجه</h5>
+											<h5>نمایش {{count}} از {{count}} نتیجه</h5>
 										</div>
 										<div class="shorting_pagination_right">
 											<ul>
@@ -272,18 +272,20 @@
 						
 						<div class="col-lg-8 col-md-12 col-sm-12">
 							<div class="row justify-content-center">
-						
+								
 								<!-- Single Property -->
+								{% for post in posts %}
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 									<div class="property-listing list_view">
 										
 										<div class="listing-img-wrapper">
-											<div class="_exlio_125">برای فروش</div>
+											<div class="_exlio_125">{{post.status_buy}}</div>
 											<div class="list-img-slide">
 												<div class="click">
-													<div><a href="single-property-1.html"><img src="assets/img/p-1.png" class="img-fluid mx-auto" alt="" /></a></div>
-													<div><a href="single-property-1.html"><img src="assets/img/p-2.png" class="img-fluid mx-auto" alt="" /></a></div>
-													<div><a href="single-property-1.html"><img src="assets/img/p-3.png" class="img-fluid mx-auto" alt="" /></a></div>
+													{% for image  in post.aparteman_images_set.all %}
+													<div><a href="single-property-1.html"><img src="{{image.images.url}}" class="img-fluid mx-auto" alt="" /></a></div>
+													{% endfor %}
+													
 												</div>
 											</div>
 										</div>
@@ -298,12 +300,24 @@
 															<span class="_list_blickes types">خانوادگی</span>
 														</div>
 														<div class="_card_flex_last">
-															<h6 class="listing-card-info-price mb-0">700 میلیون</h6>
+															<h6 class="listing-card-info-price mb-0">
+															{% if post.status_buy == "برای خرید" %}
+															{{post.gheymat}} تومان
+															{% elif post.status_buy == "برای رهن و اجاره" %}
+															
+															{{post.gheymat_rahn}} رهن   <br> {{post.gheymat_ejare}} اجاره
+														
+															{% endif %}
+														</h6>
 														</div>
 													</div>
 													<div class="_card_list_flex">
 														<div class="_card_flex_01">
-															<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></h4>
+															<h4 class="listing-name verified">
+																<a  class="prt-link-detail">
+																{{post.titr|truncatewords:5}}
+																</a>
+															</h4>
 														</div>
 													</div>
 												</div>
@@ -312,13 +326,13 @@
 											<div class="price-features-wrapper">
 												<div class="list-fx-features">
 													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>3 خوابه
+														<div class="inc-fleat-icon"><img src="{% static 'assets/img/bed.svg'%}" width="13" alt="" /></div>{{post.tedad_otagh}} خوابه
 													</div>
 													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>1 حمام
+														<div class="inc-fleat-icon"><img src="{% static 'assets/img/bathtub.svg'%}" width="13" alt="" /></div>{{post.tedad_dastshoe}} سرویس
 													</div>
 													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>800 متر مربع
+														<div class="inc-fleat-icon"><img src="{% static 'assets/img/move.svg'%}" width="13" alt="" /></div>{{post.andaze}} متر مربع
 													</div>
 												</div>
 											</div>
@@ -345,371 +359,7 @@
 									</div>
 								</div>
 								<!-- End Single Property -->
-								
-								<!-- Single Property -->
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-									<div class="property-listing list_view">
-										
-										<div class="listing-img-wrapper">
-											<div class="_exlio_125">برای اجاره</div>
-											<div class="list-img-slide">
-												<div class="click">
-													<div><a href="single-property-1.html"><img src="assets/img/p-4.png" class="img-fluid mx-auto" alt="" /></a></div>
-													<div><a href="single-property-1.html"><img src="assets/img/p-5.png" class="img-fluid mx-auto" alt="" /></a></div>
-													<div><a href="single-property-1.html"><img src="assets/img/p-6.png" class="img-fluid mx-auto" alt="" /></a></div>
-												</div>
-											</div>
-										</div>
-										
-										<div class="list_view_flex">
-										
-											<div class="listing-detail-wrapper mt-1">
-												<div class="listing-short-detail-wrap">
-													<div class="_card_list_flex mb-2">
-														<div class="_card_flex_01">
-															<span class="_list_blickes _netork">7 شبکه</span>
-															<span class="_list_blickes types">آپارتمان</span>
-														</div>
-														<div class="_card_flex_last">
-															<h6 class="listing-card-info-price mb-0">1050 میلیون</h6>
-														</div>
-													</div>
-													<div class="_card_list_flex">
-														<div class="_card_flex_01">
-															<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></h4>
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="price-features-wrapper">
-												<div class="list-fx-features">
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>4 خوابه
-													</div>
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>2 حمام
-													</div>
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>1000 متر مربع
-													</div>
-												</div>
-											</div>
-											
-											<div class="listing-detail-footer">
-												<div class="footer-first">
-													<div class="foot-rates">
-														<span class="elio_rate perfect">4.7</span>
-														<div class="_rate_stio">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-														</div>
-													</div>
-												</div>
-												<div class="footer-flex">
-													<a href="property-detail.html" class="prt-view">مشاهده جزئیات</a>
-												</div>
-											</div>
-										</div>
-										
-									</div>
-								</div>
-								<!-- End Single Property -->
-								
-								<!-- Single Property -->
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-									<div class="property-listing list_view">
-										
-										<div class="listing-img-wrapper">
-											<div class="_exlio_125">برای فروش</div>
-											<div class="list-img-slide">
-												<div class="click">
-													<div><a href="single-property-1.html"><img src="assets/img/p-7.png" class="img-fluid mx-auto" alt="" /></a></div>
-													<div><a href="single-property-1.html"><img src="assets/img/p-8.png" class="img-fluid mx-auto" alt="" /></a></div>
-													<div><a href="single-property-1.html"><img src="assets/img/p-9.png" class="img-fluid mx-auto" alt="" /></a></div>
-												</div>
-											</div>
-										</div>
-										
-										<div class="list_view_flex">
-										
-											<div class="listing-detail-wrapper mt-1">
-												<div class="listing-short-detail-wrap">
-													<div class="_card_list_flex mb-2">
-														<div class="_card_flex_01">
-															<span class="_list_blickes _netork">8 شبکه</span>
-															<span class="_list_blickes types">آپارتمان</span>
-														</div>
-														<div class="_card_flex_last">
-															<h6 class="listing-card-info-price mb-0">870 میلیون</h6>
-														</div>
-													</div>
-													<div class="_card_list_flex">
-														<div class="_card_flex_01">
-															<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></h4>
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="price-features-wrapper">
-												<div class="list-fx-features">
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>5 خوابه
-													</div>
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>2 حمام
-													</div>
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>900 متر مربع
-													</div>
-												</div>
-											</div>
-											
-											<div class="listing-detail-footer">
-												<div class="footer-first">
-													<div class="foot-rates">
-														<span class="elio_rate good">4.3</span>
-														<div class="_rate_stio">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-														</div>
-													</div>
-												</div>
-												<div class="footer-flex">
-													<a href="property-detail.html" class="prt-view">مشاهده جزئیات</a>
-												</div>
-											</div>
-										</div>
-										
-									</div>
-								</div>
-								<!-- End Single Property -->
-								
-								<!-- Single Property -->
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-									<div class="property-listing list_view">
-										
-										<div class="listing-img-wrapper">
-											<div class="_exlio_125">برای اجاره</div>
-											<div class="list-img-slide">
-												<div class="click">
-													<div><a href="single-property-1.html"><img src="assets/img/p-10.png" class="img-fluid mx-auto" alt="" /></a></div>
-													<div><a href="single-property-1.html"><img src="assets/img/p-11.png" class="img-fluid mx-auto" alt="" /></a></div>
-													<div><a href="single-property-1.html"><img src="assets/img/p-12.png" class="img-fluid mx-auto" alt="" /></a></div>
-												</div>
-											</div>
-										</div>
-										
-										<div class="list_view_flex">
-										
-											<div class="listing-detail-wrapper mt-1">
-												<div class="listing-short-detail-wrap">
-													<div class="_card_list_flex mb-2">
-														<div class="_card_flex_01">
-															<span class="_list_blickes _netork">10 شبکه</span>
-															<span class="_list_blickes types">ویلایی</span>
-														</div>
-														<div class="_card_flex_last">
-															<h6 class="listing-card-info-price mb-0">910 میلیون</h6>
-														</div>
-													</div>
-													<div class="_card_list_flex">
-														<div class="_card_flex_01">
-															<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></h4>
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="price-features-wrapper">
-												<div class="list-fx-features">
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>5 خوابه
-													</div>
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>2 حمام
-													</div>
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>900 متر مربع
-													</div>
-												</div>
-											</div>
-											
-											<div class="listing-detail-footer">
-												<div class="footer-first">
-													<div class="foot-rates">
-														<span class="elio_rate perfect">4.8</span>
-														<div class="_rate_stio">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-														</div>
-													</div>
-												</div>
-												<div class="footer-flex">
-													<a href="property-detail.html" class="prt-view">مشاهده جزئیات</a>
-												</div>
-											</div>
-										</div>
-										
-									</div>
-								</div>
-								<!-- End Single Property -->
-								
-								<!-- Single Property -->
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-									<div class="property-listing list_view">
-										
-										<div class="listing-img-wrapper">
-											<div class="_exlio_125">برای فروش</div>
-											<div class="list-img-slide">
-												<div class="click">
-													<div><a href="single-property-1.html"><img src="assets/img/p-13.png" class="img-fluid mx-auto" alt="" /></a></div>
-													<div><a href="single-property-1.html"><img src="assets/img/p-14.png" class="img-fluid mx-auto" alt="" /></a></div>
-													<div><a href="single-property-1.html"><img src="assets/img/p-15.png" class="img-fluid mx-auto" alt="" /></a></div>
-												</div>
-											</div>
-										</div>
-										
-										<div class="list_view_flex">
-										
-											<div class="listing-detail-wrapper mt-1">
-												<div class="listing-short-detail-wrap">
-													<div class="_card_list_flex mb-2">
-														<div class="_card_flex_01">
-															<span class="_list_blickes _netork">4 شبکه</span>
-															<span class="_list_blickes types">اداری</span>
-														</div>
-														<div class="_card_flex_last">
-															<h6 class="listing-card-info-price mb-0">740 میلیون</h6>
-														</div>
-													</div>
-													<div class="_card_list_flex">
-														<div class="_card_flex_01">
-															<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></h4>
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="price-features-wrapper">
-												<div class="list-fx-features">
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>4 خوابه
-													</div>
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>2 حمام
-													</div>
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>810 متر مربع
-													</div>
-												</div>
-											</div>
-											
-											<div class="listing-detail-footer">
-												<div class="footer-first">
-													<div class="foot-rates">
-														<span class="elio_rate good">4.5</span>
-														<div class="_rate_stio">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-														</div>
-													</div>
-												</div>
-												<div class="footer-flex">
-													<a href="property-detail.html" class="prt-view">مشاهده جزئیات</a>
-												</div>
-											</div>
-										</div>
-										
-									</div>
-								</div>
-								<!-- End Single Property -->
-								
-								<!-- Single Property -->
-								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-									<div class="property-listing list_view">
-										
-										<div class="listing-img-wrapper">
-											<div class="_exlio_125">برای اجاره</div>
-											<div class="list-img-slide">
-												<div class="click">
-													<div><a href="single-property-1.html"><img src="assets/img/p-16.png" class="img-fluid mx-auto" alt="" /></a></div>
-													<div><a href="single-property-1.html"><img src="assets/img/p-17.png" class="img-fluid mx-auto" alt="" /></a></div>
-													<div><a href="single-property-1.html"><img src="assets/img/p-18.png" class="img-fluid mx-auto" alt="" /></a></div>
-												</div>
-											</div>
-										</div>
-										
-										<div class="list_view_flex">
-										
-											<div class="listing-detail-wrapper mt-1">
-												<div class="listing-short-detail-wrap">
-													<div class="_card_list_flex mb-2">
-														<div class="_card_flex_01">
-															<span class="_list_blickes _netork">4 شبکه</span>
-															<span class="_list_blickes types">آپارتمان</span>
-														</div>
-														<div class="_card_flex_last">
-															<h6 class="listing-card-info-price mb-0">970 میلیون</h6>
-														</div>
-													</div>
-													<div class="_card_list_flex">
-														<div class="_card_flex_01">
-															<h4 class="listing-name verified"><a href="single-property-1.html" class="prt-link-detail">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</a></h4>
-														</div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="price-features-wrapper">
-												<div class="list-fx-features">
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>6 خوابه
-													</div>
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>3 حمام
-													</div>
-													<div class="listing-card-info-icon">
-														<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>1200 متر مربع
-													</div>
-												</div>
-											</div>
-											
-											<div class="listing-detail-footer">
-												<div class="footer-first">
-													<div class="foot-rates">
-														<span class="elio_rate perfect">4.8</span>
-														<div class="_rate_stio">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-														</div>
-													</div>
-												</div>
-												<div class="footer-flex">
-													<a href="property-detail.html" class="prt-view">مشاهده جزئیات</a>
-												</div>
-											</div>
-										</div>
-										
-									</div>
-								</div>
-								<!-- End Single Property -->
+								{% endfor %}
 								
 							</div>
 						</div>

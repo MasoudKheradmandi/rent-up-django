@@ -48,7 +48,7 @@ class aparteman(models.Model):
     tozihat_khososy = models.TextField(
         blank=True, null=True, verbose_name='توضیحات خصوصی')
     # map_1 = models.TextField(blank=True, null=True, verbose_name='نقشه گوگل')
-    image = models.ImageField(verbose_name='عکس اصلی')
+    image = models.ImageField(verbose_name='عکس اصلی',null=True,blank=True)
     upload_time = models.DateField(
         default=timezone.now, verbose_name='زمان ثبت')
     parking = models.CharField(max_length=2)
@@ -126,12 +126,12 @@ class vilae(models.Model):
     tozihat_khososy = models.TextField(
         blank=True, null=True, verbose_name="توضیحات خصوصی")
     map_1 = models.TextField(blank=True, null=True, verbose_name="نقشه گوگل")
-    image = models.ImageField(verbose_name="عکس اصلی")
+    image = models.ImageField(verbose_name="عکس اصلی",null=True,blank=True)
     upload_time = models.DateField(
         default=timezone.now, verbose_name="زمان ثبت")
     vise = models.BooleanField(default=False, verbose_name="ویژه؟")
     active = models.BooleanField(default=True, verbose_name="نمایش؟")
-    parking = models.CharField(max_length=2,null=True)
+    parking = models.PositiveSmallIntegerField(null=True)
 
 
 

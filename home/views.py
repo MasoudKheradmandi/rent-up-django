@@ -1,13 +1,9 @@
-from email import message
 from django.shortcuts import render , redirect
 from django.contrib.auth.forms import UserCreationForm ,AuthenticationForm
-from django.contrib.auth import login,logout,authenticate
-from django.contrib.auth.models import User
-from django.views.generic.edit import UpdateView , CreateView , DeleteView
-from django.urls import reverse_lazy
-from admin_informations.models import AdminInformation
+from django.contrib.auth import login,logout
 from django.contrib import messages
 from django.http import HttpResponse
+from posts.models import aparteman
 
 def home(request):
     # if "register" in request.method == "POST":
@@ -44,8 +40,13 @@ def LogOut(request):
 
 
 
-def ListView(request):
-	return render(request,'list_view.html',{})
+def list_view_aparteman(request):
+    posts = aparteman.objects.all()
+    context={
+        "posts" : posts,
+        "count" : posts.count()
+    }
+    return render(request,'list_view.html',context)
 
 def detailview(request):
 	return render(request,'detail.html',{})

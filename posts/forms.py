@@ -1,7 +1,6 @@
 from django import forms
-from .models import aparteman_images
 
-
+  
 class SaveFormAparteman(forms.Form):
     STATUS_BUY = (
         ('برای خرید', 'برای خرید'),
@@ -38,6 +37,7 @@ class SaveFormAparteman(forms.Form):
     # map_1 = 
     image = forms.ImageField()
     active = forms.BooleanField(required=False)
+    parking = forms.IntegerField()
     
     
     #-----------------------------
@@ -51,7 +51,6 @@ class SaveFormAparteman(forms.Form):
     sahel = forms.BooleanField(required=False)
     system_garmayeshi= forms.BooleanField(required=False)
     sigary = forms.BooleanField(required=False)
-    parking = forms.BooleanField(required=False)
     #-----------------------------------------
 
 
@@ -91,11 +90,11 @@ class SavePostvillae(forms.Form):
     # map_1 = 
     image = forms.ImageField()
     active = forms.BooleanField(required=False)
+    parking = forms.IntegerField()
 
 
 
     #-----------------------------
-    parking = forms.BooleanField()
     tahvie = forms.BooleanField(required=False)
     internet = forms.BooleanField(required=False)
     trass = forms.BooleanField(required=False)

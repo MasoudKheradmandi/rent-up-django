@@ -34,8 +34,8 @@
 			<div class="nav-menus-wrapper" style="transition-property: none;">
 				<ul class="nav-menu">
 				
-					<li class="active"><a href="#">خانه<span class="submenu-indicator"></span></a>
-						<ul class="nav-dropdown nav-submenu">
+					<li class="active"><a href="{% url 'home:home' %}">خانه<span class="submenu-indicator"></span></a>
+						{% comment %} <ul class="nav-dropdown nav-submenu">
 							<li><a href="index.html">صفحه اصلی 1</a></li>
 							<li><a href="home-2.html">صفحه اصلی 2</a></li>
 							<li><a href="home-3.html">صفحه اصلی 3</a></li>
@@ -44,25 +44,25 @@
 							<li><a href="home-6.html">صفحه اصلی 6</a></li>
 							<li><a href="home-7.html">صفحه اصلی 7</a></li>
 							<li><a href="map.html">صفحه اصلی نقشه</a></li>
-						</ul>
+						</ul> {% endcomment %}
 					</li>
 					
 					<li><a href="#">املاک<span class="submenu-indicator"></span></a>
 						<ul class="nav-dropdown nav-submenu">
-							<li><a href="#">املاک شبکه ای<span class="submenu-indicator"></span></a>
+							{% comment %} <li><a href="#">املاک شبکه ای<span class="submenu-indicator"></span></a>
 								<ul class="nav-dropdown nav-submenu">
 									<li><a href="grid-layout-with-sidebar.html">شبکه ای 1</a></li>
 									<li><a href="grid-layout-2.html">شبکه ای 2</a></li>
 									<li><a href="grid-layout-3.html">شبکه ای 3</a></li>
 								</ul>
-							</li>
+							</li> {% endcomment %}
 							<li><a href="#">املاک لیستی<span class="submenu-indicator"></span></a>
 								<ul class="nav-dropdown nav-submenu">
-									<li><a href="list-layout-with-sidebar.html">لیستی 1</a></li>
-									<li><a href="list-layout-with-map-2.html">لیستی 2</a></li>
+									<li><a href="{% url 'home:list_view' %}">لیستی 1</a></li>
+									<li><a href="#">لیستی 2</a></li>
 								</ul>
 							</li>
-							<li><a href="#">املاک با نقشه<span class="submenu-indicator"></span></a>
+							{% comment %} <li><a href="#">املاک با نقشه<span class="submenu-indicator"></span></a>
 								<ul class="nav-dropdown nav-submenu">
 									<li><a href="half-map.html">نقشه</a></li>
 									<li><a href="half-map-2.html">نقشه 2</a></li>
@@ -70,7 +70,7 @@
 									<li><a href="list-layout-with-map.html">لیستی با نوار کناری</a></li>
 									<li><a href="grid-layout-with-map.html">شبکه ای با نوار کناری</a></li>
 								</ul>
-							</li>
+							</li> {% endcomment %}
 							<li><a href="#">مشاوران<span class="submenu-indicator"></span></a>
 								<ul class="nav-dropdown nav-submenu">
 									<li><a href="agents.html">مشاوران شبکه ای 1</a></li>
@@ -78,18 +78,18 @@
 									<li><a href="agent-page.html">جزئیات مشاوران</a></li>
 								</ul>
 							</li>
-							<li><a href="#">نمایندگان<span class="submenu-indicator"></span></a>
+							{% comment %} <li><a href="#">نمایندگان<span class="submenu-indicator"></span></a>
 								<ul class="nav-dropdown nav-submenu">
 									<li><a href="agencies.html">نمایندگان شبکه ای</a></li>
 									<li><a href="agency-page.html">جزئیات نمایندگان</a></li>
 								</ul>
-							</li>
+							</li> {% endcomment %}
 						</ul>
 					</li>
 					
 					<li><a href="#">مدیریت<span class="submenu-indicator"></span></a>
 						<ul class="nav-dropdown nav-submenu">
-							<li class=""><a href="#">مدیریت کاربری<span class="submenu-indicator"></span></a>
+							{% comment %} <li class=""><a href="#">مدیریت کاربری<span class="submenu-indicator"></span></a>
 								<ul class="nav-dropdown nav-submenu">
 									<li><a href="dashboard.html">داشبورد کاربری</a></li>
 									<li><a href="my-profile.html">پروفایل من</a></li>
@@ -106,8 +106,9 @@
 									<li><a href="single-property-3.html">جزئیات ملک 3</a></li>
 									<li><a href="single-property-4.html">جزئیات ملک 4</a></li>
 								</ul>
-							</li>
-							<li><a href="compare-property.html">مقایسه املاک</a></li>
+							</li> {% endcomment %}
+							<li><a href="#">داشبورد کاربری</a></li>
+							<li><a href="{% url 'account:profile'%}">پروفایل کاربری</a></li>
 						</ul>
 					</li>
 					
