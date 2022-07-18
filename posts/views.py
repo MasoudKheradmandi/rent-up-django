@@ -1,14 +1,16 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from matplotlib.pyplot import title
+from numpy import place
 from .forms import SaveFormAparteman,SavePostvillae,SavePostZamin
-from .models import aparteman,vilae, zamin
+from .models import aparteman,vilae, vilae_image, zamin,aparteman_images, zamin_image
 # Create your views here.
 def save_post_apa(request):
     nevisande = request.user
     print(nevisande)
     if request.method == "POST":
         form = SaveFormAparteman(request.POST , request.FILES)
+        # form_images = SavePostApa(request.FILES)
         if form.is_valid():
             titr = form.cleaned_data['titr']
             status_buy= form.cleaned_data['status_buy']
@@ -40,6 +42,8 @@ def save_post_apa(request):
             system_garmayeshi= form.cleaned_data['system_garmayeshi']
             sigary = form.cleaned_data['sigary']
             parking = form.cleaned_data['parking']
+            # this is Big Bug !!!!!!
+            images =request.FILES.getlist('images')
             x=aparteman.objects.create(
                 titr=titr,status_buy=status_buy,gheymat=gheymat,gheymat_rahn=gheymat_rahn,gheymat_ejare=gheymat_ejare,locations=locations,sanad=sanad,andaze=andaze,tabaghe=tabaghe,
                 tedad_tabaghe=tedad_tabaghe,tedad_vahed_tabaghe=tedad_vahed_tabaghe,tedad_otagh=tedad_otagh,
@@ -48,6 +52,9 @@ def save_post_apa(request):
                 internet=internet,trass=trass,wifi=wifi,bed=bed,micro=micro,balcony=balcony,sahel=sahel,system_garmayeshi=system_garmayeshi,sigary=sigary,parking=parking,tahvie=tahvie,nevisande=nevisande,
             )
             x.save()
+            for ima in images:
+                y = aparteman_images.objects.create(images=ima,place=x)
+                y.save()
         return HttpResponse('Finish')
     else:
         form = SaveFormAparteman()
@@ -91,6 +98,7 @@ def save_post_villa(request):
             system_garmayeshi= form.cleaned_data['system_garmayeshi']
             sigary = form.cleaned_data['sigary']
             parking = form.cleaned_data['parking']
+            images =request.FILES.getlist('images')
             x=vilae.objects.create(
                 titr=titr,status_buy=status_buy,gheymat=gheymat,gheymat_rahn=gheymat_rahn,gheymat_ejare=gheymat_ejare,locations=locations,sanad=sanad,andaze_zamin =andaze_zamin,tedad_otagh=tedad_otagh,
                 tedad_dastshoe=tedad_dastshoe,sal_sakht=sal_sakht,ghabel_moaveze=ghabel_moaveze,tozihat_karbar=tozihat_karbar,
@@ -98,6 +106,9 @@ def save_post_villa(request):
                 internet=internet,trass=trass,wifi=wifi,bed=bed,micro=micro,balcony=balcony,sahel=sahel,system_garmayeshi=system_garmayeshi,sigary=sigary,parking=parking,tahvie=tahvie,nevisande=nevisande,andaze_bana=andaze_bana
             )
             x.save()
+            for ima in images:
+                y = vilae_image.objects.create(images=ima,place=x)
+                y.save()
         return HttpResponse('Finish')
     else:
         form = SavePostvillae()
@@ -125,6 +136,7 @@ def save_post_zamin(request):
             tozihat_khososy= form.cleaned_data['tozihat_khososy']
             image= form.cleaned_data['image']
             active= form.cleaned_data['active']
+            images =request.FILES.getlist('images')
             x = zamin.objects.create(
                 titr=titr,gheymat=gheymat,noe_zamin=noe_zamin,locations=locations,
                 sanad=sanad,ghabel_moaveze=ghabel_moaveze,tozihat_karbar=tozihat_karbar,
@@ -132,6 +144,9 @@ def save_post_zamin(request):
                 image=image,active=active,nevisande=nevisande,andaze=andaze
             )
             x.save()
+            for ima in images:
+                y = zamin_image.objects.create(images=ima,place=x)
+                y.save()
             return HttpResponse("Done!")
     else:
         form=SavePostZamin()

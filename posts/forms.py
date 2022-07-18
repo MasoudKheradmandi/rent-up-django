@@ -1,6 +1,6 @@
-from email.policy import default
-from secrets import choice
 from django import forms
+from .models import aparteman_images
+
 
 class SaveFormAparteman(forms.Form):
     STATUS_BUY = (
@@ -54,6 +54,9 @@ class SaveFormAparteman(forms.Form):
     parking = forms.BooleanField(required=False)
     #-----------------------------------------
 
+
+
+        
 class SavePostvillae(forms.Form):
     SAL_SAKHT = (
         ('0-5','0-5'),
@@ -92,7 +95,7 @@ class SavePostvillae(forms.Form):
 
 
     #-----------------------------
-    parking = forms.IntegerField()
+    parking = forms.BooleanField()
     tahvie = forms.BooleanField(required=False)
     internet = forms.BooleanField(required=False)
     trass = forms.BooleanField(required=False)
@@ -104,6 +107,9 @@ class SavePostvillae(forms.Form):
     system_garmayeshi= forms.BooleanField(required=False)
     sigary = forms.BooleanField(required=False)
     #-----------------------------------------
+
+class vilae_image_form(forms.Form):
+    images = forms.ImageField()
 
 
 
@@ -130,3 +136,5 @@ class SavePostZamin(forms.Form):
     image = forms.ImageField()
     active = forms.BooleanField(required=False)
 
+class zamin_image_form(forms.Form):
+    images = forms.ImageField()

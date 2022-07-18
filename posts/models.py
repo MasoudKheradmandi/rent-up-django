@@ -76,6 +76,9 @@ class aparteman(models.Model):
         verbose_name = 'اپارتمان'
         verbose_name_plural = 'اپارتمان ها'
 
+class aparteman_images(models.Model):
+    place = models.ForeignKey('aparteman',on_delete=models.CASCADE)
+    images = models.ImageField()
 
 
 class vilae(models.Model):
@@ -154,6 +157,11 @@ class vilae(models.Model):
     def __str__(self):
         return self.titr
 
+class vilae_image(models.Model):
+    place =models.ForeignKey('vilae',on_delete=models.CASCADE)
+    images = models.ImageField()
+
+    
 
 class zamin(models.Model):
     SANAD_CHOICES = (
@@ -195,3 +203,7 @@ class zamin(models.Model):
         ordering = ['-upload_time']
         verbose_name = 'زمین'
         verbose_name_plural = 'زمین ها'
+    
+class zamin_image(models.Model):
+    place = models.ForeignKey('zamin',on_delete=models.CASCADE)
+    images = models.ImageField()
