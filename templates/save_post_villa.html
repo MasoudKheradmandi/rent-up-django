@@ -80,258 +80,258 @@
 										<div class="col-lg-12 col-md-12">
 										
 											<div class="submit-page">
-											 <form  method='post' enctype="multipart/form-data">
-												{% csrf_token %}
-												{% comment %} {{form.as_p}} {% endcomment %}
-												<!-- Basic Information -->
-											 <div class="frm_submit_block">	
-													<h3>اطلاعات اولیه</h3>
-													<div class="frm_submit_wrap">
-														<div class="form-row">
-														
-															<div class="form-group col-md-12">
-																<label >عنوان ملک<a href="#" class="tip-topdata" data-tip="عنوان ملک"><i class="ti-help"></i></a></label>
-																<input  type="text" name="titr" maxlength="150" class="form-control">
-															</div>
+												<form  method='post' enctype="multipart/form-data">
+													{% csrf_token %}
+													{% comment %} {{form.as_p}} {% endcomment %}
+													<!-- Basic Information -->
+													<div class="frm_submit_block">	
+														<h3>اطلاعات اولیه</h3>
+														<div class="frm_submit_wrap">
+															<div class="form-row">
 															
-															<div class="form-group col-md-6">
-																<label for="id_status_buy">وضعیت</label>
-																<select name='status_buy' id="id_status_buy" class="form-control">
-																	<option value="">&nbsp;</option>
-																	<option value="برای خرید">برای خرید</option>
-																	<option value='برای اجاره'>برای اجاره</option>
-																</select>
-															</div>
-															
-															 {% comment %} <div class="form-group col-md-6">
-																<label>نوع ملک</label>
-																<select id="ptypes" class="form-control">
-																	<option value="">&nbsp;</option>
-																	<option value="1">خانه</option>
-																	<option value="2">آپارتمان</option>
-																	<option value="3">ویلایی</option>
-																	<option value="4">تجاری</option>
-																	<option value="5">اداری</option>
-																	<option value="6">گاراژ</option>
-																</select> 
-															</div>  {% endcomment %}
-															
-															
-															
-															
-															<div class="form-group col-md-6">
-                                                                <label for="id_gheymat">قیمت</label>
-																<input name="gheymat" type="number" required id="id_gheymat" class="form-control" placeholder="تومان">
-															</div>
-															<div class="form-group col-md-6">
-                                                                <label for="id_gheymat_rahn">gheymat_rahn</label>
-																<input name="gheymat_rahn" id="id_gheymat_rahn" type="number" class="form-control" placeholder="تومان">
-															</div>
-															<div class="form-group col-md-6">
-																<label for="id_gheymat_ejare">Gheymat ejare:</label>
-																<input name='gheymat_ejare' id="id_gheymat_ejare" type="number" class="form-control" placeholder="تومان">
-															</div>
-                                                            
-															<div class="form-group col-md-6">
-                                                                <label for="id_locations" >منطقه</label>
-																<input name="locations" type="text" id="id_locations" class="form-control">
-															</div>
-															
-															
-															
-															
-															
-															
-															<div class="form-group col-md-6">
-																<label for='id_sanad'>سند:</label>
-																<select id="id_sanad" name="sanad" class="form-control">
-																	<option value="شش دانگ">شش دانگ</option>
-																	<option value="مشاع">مشاع</option>
-																	<option value="اصلاحات ارضی">اصلاحات ارضی</option>
-																</select>
-															</div>
-                                                            
-                                                            <div class="form-group col-md-6">
-                                                                <label for="id_andaze_zamin">Andaze zamin:</label>
-                                                                <input id="id_andaze_zamin" name="andaze_zamin" type="number" class="form-control">
-                                                            </div>
+																<div class="form-group col-md-12">
+																	<label >عنوان ملک<a href="#" class="tip-topdata" data-tip="عنوان ملک"><i class="ti-help"></i></a></label>
+																	<input  type="text" name="titr" maxlength="150" class="form-control">
+																</div>
+																
+																<div class="form-group col-md-6">
+																	<label for="id_status_buy">وضعیت</label>
+																	<select name='status_buy' id="id_status_buy" class="form-control">
+																		<option value="">&nbsp;</option>
+																		<option value="برای خرید">برای خرید</option>
+																		<option value='برای اجاره'>برای اجاره</option>
+																	</select>
+																</div>
+																
+																{% comment %} <div class="form-group col-md-6">
+																	<label>نوع ملک</label>
+																	<select id="ptypes" class="form-control">
+																		<option value="">&nbsp;</option>
+																		<option value="1">خانه</option>
+																		<option value="2">آپارتمان</option>
+																		<option value="3">ویلایی</option>
+																		<option value="4">تجاری</option>
+																		<option value="5">اداری</option>
+																		<option value="6">گاراژ</option>
+																	</select> 
+																</div>  {% endcomment %}
+																
+																
+																
+																
+																<div class="form-group col-md-6">
+																	<label for="id_gheymat">قیمت</label>
+																	<input name="gheymat" type="number" required id="id_gheymat" class="form-control" placeholder="تومان">
+																</div>
+																<div class="form-group col-md-6">
+																	<label for="id_gheymat_rahn">gheymat_rahn</label>
+																	<input name="gheymat_rahn" id="id_gheymat_rahn" type="number" class="form-control" placeholder="تومان">
+																</div>
+																<div class="form-group col-md-6">
+																	<label for="id_gheymat_ejare">Gheymat ejare:</label>
+																	<input name='gheymat_ejare' id="id_gheymat_ejare" type="number" class="form-control" placeholder="تومان">
+																</div>
+																
+																<div class="form-group col-md-6">
+																	<label for="id_locations" >منطقه</label>
+																	<input name="locations" type="text" id="id_locations" class="form-control">
+																</div>
+																
+																
+																
+																
+																
+																
+																<div class="form-group col-md-6">
+																	<label for='id_sanad'>سند:</label>
+																	<select id="id_sanad" name="sanad" class="form-control">
+																		<option value="شش دانگ">شش دانگ</option>
+																		<option value="مشاع">مشاع</option>
+																		<option value="اصلاحات ارضی">اصلاحات ارضی</option>
+																	</select>
+																</div>
+																
+																<div class="form-group col-md-6">
+																	<label for="id_andaze_zamin">Andaze zamin:</label>
+																	<input id="id_andaze_zamin" name="andaze_zamin" type="number" class="form-control">
+																</div>
 
-                                                            <div class="form-group col-md-6">
-                                                                <label for="id_andaze_bana" >Andaze bana:</label>
-                                                                <input name="andaze_bana" type="number" class="form-control" id="id_andaze_bana" >
-                                                            </div>
-                                                            
-                                                            
-															<div class="form-group col-md-6">
-                                                                <label for="id_tedad_otagh">tedad_dastshoe</label>
-																<input name="tedad_dastshoe" type="number" class="form-control" id="id_tedad_otagh">
+																<div class="form-group col-md-6">
+																	<label for="id_andaze_bana" >Andaze bana:</label>
+																	<input name="andaze_bana" type="number" class="form-control" id="id_andaze_bana" >
+																</div>
+																
+																
+																<div class="form-group col-md-6">
+																	<label for="id_tedad_otagh">tedad_dastshoe</label>
+																	<input name="tedad_dastshoe" type="number" class="form-control" id="id_tedad_otagh">
+																</div>
+																
+																
+																
 															</div>
-															
-															
-															
 														</div>
-													</div>
-												</div> 
-												
-												
-												<!-- Gallery -->
-								<div class="frm_submit_block">	
-									<h3>گالری</h3>
-									<div class="frm_submit_wrap">
-										<div class="form-row">
-										
-											<div class="form-group col-md-12">
-												<label>
-													<i class="ti-gallery"></i>
-													<span>برای تغییر عکس ها بکشید و رها کنید</span>
-												</label>
-												
-													<div >
-														<input type="file" name="image" accept="image/*" class="dz-default dz-message dropzone dz-clickable primary-dropzone">
-													</div>
-												
-											</div>
-											<div class="form-group col-md-12">
-												<label for="id_image">
-													<i class="ti-gallery"></i>
-													<span>برای تغییر عکس ها بکشید و رها کنید</span>
-												</label>
-												
-													<div >
-														<input type="file" name="images" id="id_image" accept="image/*" class="dz-default dz-message dropzone dz-clickable primary-dropzone" multiple>
-													</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-								
-												
-												
-												<div class="frm_submit_block">	
-													<h3>اطلاعات دقیق</h3>
-													<div class="frm_submit_wrap">
-														<div class="form-row">
-												
-															<div class="form-group col-md-12">
-																<label for="id_tozihat_karbar">توضیحات</label>
-																<textarea id="id_tozihat_karbar" name="tozihat_karbar" class="form-control h-120"></textarea>
-															</div>
-															<div class="form-group col-md-12">
-																<label for="id_tozihat_khososy"> توضیحات خصوصی</label>
-																<textarea name="tozihat_khososy" id="id_tozihat_khososy" class="form-control h-120"></textarea>
-															</div>
+													</div> 
+													
+													
+													<!-- Gallery -->
+													<div class="frm_submit_block">	
+														<h3>گالری</h3>
+														<div class="frm_submit_wrap">
+															<div class="form-row">
 															
-															<div class="form-group col-md-4">
-																<label for="id_sal_sakht">سن ساختمان </label>
-																<select id="id_sal_sakht" name = "sal_sakht" class="form-control">
-																	<option value="">&nbsp;</option>
-																	<option value="0-5">0-5</option>
-																	<option value="5-10">5-10</option>
-																	<option value="10-20">10-20</option>
-																	<option value="20+">20+</option>
-															
-																</select>
-															</div>
-															
-															
-															
-															<div class="form-group col-md-4">
-																<label for="id_tedad_otagh">اتاق ها </label>
-																<select name="tedad_otagh" id="id_tedad_otagh" class="form-control">
-																	<option value="">&nbsp;</option>
-																	<option value=1>1</option>
-																	<option value=2>2</option>
-																	<option value=3>3</option>
-																	<option value=4>4</option>
-																	<option value=5>5</option>
-																	<option value=6>6</option>
-																</select>
-															</div>
-
-															<div class="form-group col-md-4">
-																<label for="id_parking">parking</label>
-																<select name="parking" class="form-control" id="id_parking">
-																	<option value="">&nbsp;</option>
-																	<option value=1>1</option>
-																	<option value=2>2</option>
-																	<option value=3>3</option>
-																	<option value=4>4</option>
-																	<option value=5>5</option>
-																	<option value=6>6</option>
-																</select>
-															</div>
-															
-															<div class="form-group col-md-12">
-																<label>سایر ویژگی ها (اختیاری)</label>
-																<div class="o-features">
-																	<ul class="no-ul-list third-row">
-																		<li>
-																			<input id="a-1" class="checkbox-custom" name="tahvie" type="checkbox">
-																			<label for="a-1" class="checkbox-custom-label">تهویه کننده هوا</label>
-																		</li>
-																		<li>
-																			<input id="a-2" class="checkbox-custom" name="bed" type="checkbox">
-																			<label for="a-2" class="checkbox-custom-label">تختواب</label>
-																		</li>
-																		<li>
-																			<input id="a-3" class="checkbox-custom" name="system_garmayeshi" type="checkbox">
-																			<label for="a-3" class="checkbox-custom-label">سیستم گرمایشی</label>
-																		</li>
-																		<li>
-																			<input id="a-4" class="checkbox-custom" name="internet" type="checkbox">
-																			<label for="a-4" class="checkbox-custom-label">اینترنت</label>
-																		</li>
-																		<li>
-																			<input id="a-5" class="checkbox-custom" name="micro" type="checkbox">
-																			<label for="a-5" class="checkbox-custom-label">مایکروویو</label>
-																		</li>
-																		<li>
-																			<input id="a-6" class="checkbox-custom" name="sigary" type="checkbox">
-																			<label for="a-6" class="checkbox-custom-label">سیگار کشیدن</label>
-																		</li>
-																		<li>
-																			<input id="a-7" class="checkbox-custom" name="trass" type="checkbox">
-																			<label for="a-7" class="checkbox-custom-label">تراس</label>
-																		</li>
-																		<li>
-																			<input id="a-8" class="checkbox-custom" name="balcony" type="checkbox">
-																			<label for="a-8" class="checkbox-custom-label">بالکن</label>
-																		</li>
-																		<li>
-																			<input id="a-9" class="checkbox-custom" name="active" type="checkbox">
-																			<label for="a-9" class="checkbox-custom-label">نمایش داده شود؟</label>
-																		</li>
-																		<li>
-																			<input id="a-10" class="checkbox-custom" name="wifi" type="checkbox">
-																			<label for="a-10" class="checkbox-custom-label">وای فای</label>
-																		</li>
-																		<li>
-																			<input id="a-11" class="checkbox-custom" name="sahel" type="checkbox">
-																			<label for="a-11" class="checkbox-custom-label">ساحل دریا</label>
-																		</li>
-																		<li>
-																			<input id='a-13' class="checkbox-custom" id="id_ghabel_moaveze" name="ghabel_moaveze" type="checkbox">
-																			<label for='a-13' class="checkbox-custom-label" for="id_ghabel_moaveze">ghabel moaveze</label>
-																		</li>
-																	</ul>
+																<div class="form-group col-md-12">
+																	<label>
+																		<i class="ti-gallery"></i>
+																		<span>برای تغییر عکس ها بکشید و رها کنید</span>
+																	</label>
+																	
+																		<div >
+																			<input type="file" name="image" accept="image/*" class="dz-default dz-message dropzone dz-clickable primary-dropzone">
+																		</div>
+																	
+																</div>
+																<div class="form-group col-md-12">
+																	<label for="id_image">
+																		<i class="ti-gallery"></i>
+																		<span>برای تغییر عکس ها بکشید و رها کنید</span>
+																	</label>
+																	
+																		<div >
+																			<input type="file" name="images" id="id_image" accept="image/*" class="dz-default dz-message dropzone dz-clickable primary-dropzone" multiple>
+																		</div>
+																	
 																</div>
 															</div>
-															
 														</div>
 													</div>
-												</div>
-												 
-												<!-- Contact Information -->
-										
-												</div> 
-												
-												
-												<div class="form-group col-lg-12 col-md-12">
-													<button class="btn btn-theme" value="save" type="submit">ارسال و پیشنمایش</button>
-												</div> 
-												 
-											</form>			
+									
+													
+													
+													<div class="frm_submit_block">	
+														<h3>اطلاعات دقیق</h3>
+														<div class="frm_submit_wrap">
+															<div class="form-row">
+													
+																<div class="form-group col-md-12">
+																	<label for="id_tozihat_karbar">توضیحات</label>
+																	<textarea id="id_tozihat_karbar" name="tozihat_karbar" class="form-control h-120"></textarea>
+																</div>
+																<div class="form-group col-md-12">
+																	<label for="id_tozihat_khososy"> توضیحات خصوصی</label>
+																	<textarea name="tozihat_khososy" id="id_tozihat_khososy" class="form-control h-120"></textarea>
+																</div>
+																
+																<div class="form-group col-md-4">
+																	<label for="id_sal_sakht">سن ساختمان </label>
+																	<select id="id_sal_sakht" name = "sal_sakht" class="form-control">
+																		<option value="">&nbsp;</option>
+																		<option value="0-5">0-5</option>
+																		<option value="5-10">5-10</option>
+																		<option value="10-20">10-20</option>
+																		<option value="20+">20+</option>
+																
+																	</select>
+																</div>
+																
+																
+																
+																<div class="form-group col-md-4">
+																	<label for="id_tedad_otagh">اتاق ها </label>
+																	<select name="tedad_otagh" id="id_tedad_otagh" class="form-control">
+																		<option value="">&nbsp;</option>
+																		<option value=1>1</option>
+																		<option value=2>2</option>
+																		<option value=3>3</option>
+																		<option value=4>4</option>
+																		<option value=5>5</option>
+																		<option value=6>6</option>
+																	</select>
+																</div>
+
+																<div class="form-group col-md-4">
+																	<label for="id_parking">parking</label>
+																	<select name="parking" class="form-control" id="id_parking">
+																		<option value="">&nbsp;</option>
+																		<option value=1>1</option>
+																		<option value=2>2</option>
+																		<option value=3>3</option>
+																		<option value=4>4</option>
+																		<option value=5>5</option>
+																		<option value=6>6</option>
+																	</select>
+																</div>
+																
+																<div class="form-group col-md-12">
+																	<label>سایر ویژگی ها (اختیاری)</label>
+																	<div class="o-features">
+																		<ul class="no-ul-list third-row">
+																			<li>
+																				<input id="a-1" class="checkbox-custom" name="tahvie" type="checkbox">
+																				<label for="a-1" class="checkbox-custom-label">تهویه کننده هوا</label>
+																			</li>
+																			<li>
+																				<input id="a-2" class="checkbox-custom" name="bed" type="checkbox">
+																				<label for="a-2" class="checkbox-custom-label">تختواب</label>
+																			</li>
+																			<li>
+																				<input id="a-3" class="checkbox-custom" name="system_garmayeshi" type="checkbox">
+																				<label for="a-3" class="checkbox-custom-label">سیستم گرمایشی</label>
+																			</li>
+																			<li>
+																				<input id="a-4" class="checkbox-custom" name="internet" type="checkbox">
+																				<label for="a-4" class="checkbox-custom-label">اینترنت</label>
+																			</li>
+																			<li>
+																				<input id="a-5" class="checkbox-custom" name="micro" type="checkbox">
+																				<label for="a-5" class="checkbox-custom-label">مایکروویو</label>
+																			</li>
+																			<li>
+																				<input id="a-6" class="checkbox-custom" name="sigary" type="checkbox">
+																				<label for="a-6" class="checkbox-custom-label">سیگار کشیدن</label>
+																			</li>
+																			<li>
+																				<input id="a-7" class="checkbox-custom" name="trass" type="checkbox">
+																				<label for="a-7" class="checkbox-custom-label">تراس</label>
+																			</li>
+																			<li>
+																				<input id="a-8" class="checkbox-custom" name="balcony" type="checkbox">
+																				<label for="a-8" class="checkbox-custom-label">بالکن</label>
+																			</li>
+																			<li>
+																				<input id="a-9" class="checkbox-custom" name="active" type="checkbox">
+																				<label for="a-9" class="checkbox-custom-label">نمایش داده شود؟</label>
+																			</li>
+																			<li>
+																				<input id="a-10" class="checkbox-custom" name="wifi" type="checkbox">
+																				<label for="a-10" class="checkbox-custom-label">وای فای</label>
+																			</li>
+																			<li>
+																				<input id="a-11" class="checkbox-custom" name="sahel" type="checkbox">
+																				<label for="a-11" class="checkbox-custom-label">ساحل دریا</label>
+																			</li>
+																			<li>
+																				<input id='a-13' class="checkbox-custom" id="id_ghabel_moaveze" name="ghabel_moaveze" type="checkbox">
+																				<label for='a-13' class="checkbox-custom-label" for="id_ghabel_moaveze">ghabel moaveze</label>
+																			</li>
+																		</ul>
+																	</div>
+																</div>
+																
+															</div>
+														</div>
+													</div>
+													
+													<!-- Contact Information -->
+											
+													</div> 
+													
+													
+													<div class="form-group col-lg-12 col-md-12">
+														<button class="btn btn-theme" value="save" type="submit">ارسال و پیشنمایش</button>
+													</div> 
+													
+												</form>			
 											</div>
 										</div>
 										

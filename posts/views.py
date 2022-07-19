@@ -8,7 +8,6 @@ def save_post(request):
 
 def save_post_apa(request):
     nevisande = request.user
-    print(nevisande)
     if request.method == "POST":
         form = SaveFormAparteman(request.POST, request.FILES)
         # form_images = SavePostApa(request.FILES)
@@ -56,14 +55,15 @@ def save_post_apa(request):
             for ima in images:
                 y = aparteman_images.objects.create(images=ima, place=x)
                 y.save()
-        return HttpResponse('Finish')
+            return HttpResponse('Finish')
     else:
         form = SaveFormAparteman()
 
     context = {
-        'form': form
+        'form': form,
+        "sabt": "aparteman"
     }
-    return render(request, 'save_post_apa.html', context)
+    return render(request, 'save_post.html', context)
 
 
 def save_post_villa(request):
@@ -110,14 +110,16 @@ def save_post_villa(request):
             for ima in images:
                 y = vilae_image.objects.create(images=ima, place=x)
                 y.save()
-        return HttpResponse('Finish')
+            return HttpResponse('Finish')
     else:
         form = SavePostvillae()
 
     context = {
-        'form': form
+        'form': form,
+        'sabt': "villa"
+
     }
-    return render(request, 'save_post_villa.html', context)
+    return render(request, 'save_post.html', context)
 
 
 def save_post_zamin(request):
