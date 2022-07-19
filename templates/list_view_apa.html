@@ -30,7 +30,7 @@
 									<ul class="shorting_grid">
 										{% comment %} <li class="list-inline-item"><a href="grid-layout-with-sidebar.html" class="active"><span class="ti-layout-grid2"></span>شبکه ای</a></li>
 										<li class="list-inline-item"><a href="#"><span class="ti-map-alt"></span>نقشه</a></li> {% endcomment %}
-										<li class="list-inline-item"><a><span class="ti-view-list"></span>لیستی</a></li>
+										<li class="list-inline-item"><a><span class="ti-view-list"></span>لیست اپارتمان ها</a></li>
 									</ul>
 								</div>
 						
@@ -282,6 +282,7 @@
 											<div class="_exlio_125">{{post.status_buy}}</div>
 											<div class="list-img-slide">
 												<div class="click">
+													<div><a href="single-property-1.html"><img src="{{post.image.url}}" class="img-fluid mx-auto" alt="" /></a></div>
 													{% for image  in post.aparteman_images_set.all %}
 													<div><a href="single-property-1.html"><img src="{{image.images.url}}" class="img-fluid mx-auto" alt="" /></a></div>
 													{% endfor %}
