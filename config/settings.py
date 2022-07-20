@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'admin_informations',
     'account',
     'posts',
+
+    'star_ratings',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +146,13 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 #------------------------------------------
+
+
+
+
+
+
+#--------------------------STAR RATING----------------
+
+STAR_RATINGS_STAR_HEIGHT=14.5
+STAR_RATINGS_STAR_WIDTH=14.5

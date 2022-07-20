@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load ratings %}
 {% block body %}
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +35,7 @@
 					{% for image in post.aparteman_images_set.all %}
 						<div class="featured_slick_padd"><img src="{{image.images.url}}" class="img-fluid mx-auto" alt="" /></div>
 					{% endfor %}
+					
 				</div>
 			</div>
 			<!-- ============================ Hero Banner End ================================== -->
@@ -42,7 +44,6 @@
 			<section class="pt-4">
 				<div class="container">
 					<div class="row">
-						
 						<!-- property main detail -->
 						<div class="col-lg-8 col-md-12 col-sm-12">
 							
@@ -68,6 +69,7 @@
 											<li><a href="#"><i class="fa fa-share"></i></a></li>
 										</ul>
 									</div>
+									{% comment %} {% ratings post %} {% endcomment %}
 								</div>
 								
 							</div>
@@ -252,15 +254,15 @@
 								</div>
 								
 								<div class="block-body">
-									<div class="rating-overview">
-										<div class="rating-overview-box">
-											<span class="rating-overview-box-total">4.8</span>
-											<span class="rating-overview-box-percent">از 5.0</span>
-											<div class="star-rating" data-rating="5"><i class="fa fa-star filled"></i><i class="fa fa-star filled"></i><i class="fa fa-star filled"></i><i class="fa fa-star filled"></i><i class="fa fa-star filled"></i>
+									 <div class="rating-overview">
+										<div class="rating-overview-box"> 
+											 <span class="rating-overview-box-total"></span>
+											 <span class="rating-overview-box-percent"</span>
+												{% comment %} <div class="star-rating" data-rating="5"><i class="fa fa-star filled"></i><i class="fa fa-star filled"></i><i class="fa fa-star filled"></i><i class="fa fa-star filled"></i><i class="fa fa-star filled"></i>
+												</div> {% endcomment %}
+												{% ratings post %} 
 											</div>
-										</div>
-
-										<div class="rating-bars">
+								<div class="rating-bars">
 											<div class="rating-bars-item">
 												<span class="rating-bars-name">ویژگی</span>
 												<span class="rating-bars-inner">

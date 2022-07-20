@@ -1,0 +1,26 @@
+{% extends "star_ratings/widget_base.html" %}
+{% load i18n %}
+{% block rating_detail %}
+
+
+{% comment %} <div class="block-body">
+    <div class="rating-overview">
+        <div class="rating-overview-box">
+            <span class="rating-overview-box-percent">از 5.0</span>
+            <span class="rating-overview-box-percent">از 5.0</span>
+            <div class="star-rating" data-rating="5">
+            
+            </div>
+        </div> {% endcomment %}
+
+        {% comment %} <div class="block-body"> {% endcomment %}
+            {% comment %} <div class="rating-overview">
+                <div class="rating-overview-box"> {% endcomment %}
+                    <span class="rating-overview-box-total">{{ rating.average|floatformat:"-2" }}</span>
+                    <span class="rating-overview-box-percent">از 5.0</span>
+                    {% comment %} <div class="star-rating" data-rating="5"><i class="fa fa-star filled"></i><i class="fa fa-star filled"></i><i class="fa fa-star filled"></i><i class="fa fa-star filled"></i><i class="fa fa-star filled"></i>
+                    </div> {% endcomment %}
+                    {% comment %} {% ratings post %} {% endcomment %}
+                {% comment %} </div> {% endcomment %}
+
+{% endblock rating_detail %}

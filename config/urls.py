@@ -22,6 +22,7 @@ urlpatterns = [
     path('info/', include('admin_informations.urls')),
     path('account/', include('account.urls')),
     path('posts/', include('posts.urls')),
+    path('ratings/', include('star_ratings.urls', namespace='ratings')),
 
 ]
 from django.conf.urls.static import static
