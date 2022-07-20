@@ -282,9 +282,9 @@
 											<div class="_exlio_125">{{post.status_buy}}</div>
 											<div class="list-img-slide">
 												<div class="click">
-													<div><a href="single-property-1.html"><img src="{{post.image.url}}" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><img src="{{post.image.url}}" class="img-fluid mx-auto" alt="" /></div>
 													{% for image  in post.aparteman_images_set.all %}
-													<div><a href="single-property-1.html"><img src="{{image.images.url}}" class="img-fluid mx-auto" alt="" /></a></div>
+													<div><img src="{{image.images.url}}" class="img-fluid mx-auto" alt="" /></div>
 													{% endfor %}
 													
 												</div>
@@ -352,7 +352,7 @@
 													</div>
 												</div>
 												<div class="footer-flex">
-													<a href="property-detail.html" class="prt-view">مشاهده جزئیات</a>
+													<a href="{% url 'home:detailapa' post.id %}" class="prt-view">مشاهده جزئیات</a>
 												</div>
 											</div>
 										</div>

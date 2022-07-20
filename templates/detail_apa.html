@@ -20,12 +20,8 @@
 							<div class="gg_single_part left"><a href="{{post.image.url}}" class="mfp-gallery"><img src="{{post.image.url}}" class="img-fluid mx-auto" alt="" /></a></div>
 						</div>
 						<div class="col-lg-4 col-md-5 col-sm-12 pr-1">
-							{% for image in post.vilae_image_set.all %}
-								{% if forloop.counter > 3 %}
-								<a href="{{image.images.url}}" class="mfp-gallery"></a>
-								{% else %}
+							{% for image in post.aparteman_images_set.all %}
 								<div class="gg_single_part-right min mt-2 mb-2"><a href="{{image.images.url}}" class="mfp-gallery"><img src="{{image.images.url}}" class="img-fluid mx-auto" alt="" /></a></div>
-								{% endif %}
 							{% endfor %}
 						</div>
 					</div>
@@ -35,7 +31,7 @@
 			<div class="featured_slick_gallery gray d-block d-md-block d-lg-block d-xl-none">
 				<div class="featured_slick_gallery-slide">
 					<div class="featured_slick_padd"><img src="{{post.image.url}}" class="img-fluid mx-auto" alt="" /></div>
-					{% for image in post.vilae_image_set.all %}
+					{% for image in post.aparteman_images_set.all %}
 						<div class="featured_slick_padd"><img src="{{image.images.url}}" class="img-fluid mx-auto" alt="" /></div>
 					{% endfor %}
 				</div>
@@ -58,7 +54,7 @@
 											<li><span class="bed">{{post.tedad_otagh}} خوابه</span></li>
 											<li><span class="bath">{{post.tedad_dastshoe}} حمام و دستشویی</span></li>
 											<li><span class="gar">{{post.parking}} پارکینگ</span></li>
-											<li><span class="sqft">{{post.andaze_bana}} مترمربع</span></li>
+											<li><span class="sqft">{{post.andaze}} مترمربع</span></li>
 										</ul>
 										<h2>{{post.titr}}</h2>
 										<span><i class="lni-map-marker"></i> {{post.locations}}</span>
@@ -100,7 +96,7 @@
 									<ul class="row p-0 m-0">
 										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-bed ml-1"></i>{{post.tedad_otagh}} اتاق خواب</li>
 										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-bath ml-1"></i>{{post.tedad_dastshoe}} حمام</li>
-										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-expand-arrows-alt ml-1"></i>{{post.andaze_bana}} مترمربع</li>
+										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-expand-arrows-alt ml-1"></i>{{post.andaze}} مترمربع</li>
 										<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-building ml-1"></i>{{post.sal_sakht}}سال ساخت </li>
 										{% if post.parking %}<li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-car ml-1"></i>{{post.parking}}پارکینگ خودرو</li>{% endif %}
 										{% comment %} <li class="col-lg-4 col-md-6 mb-2 p-0"><i class="fa fa-layer-group ml-1"></i>مسکونی</li> {% endcomment %}

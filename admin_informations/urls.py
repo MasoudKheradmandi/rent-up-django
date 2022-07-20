@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+app_name = 'admin_informations'
+
 urlpatterns = [
-    path('',views.home,name='home'),
+    path('listagent',views.agent_list,name='listagent'),
 ]

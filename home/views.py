@@ -62,6 +62,12 @@ def detail_view_vila(request,id):
         'post' : post
     }
     return render(request, 'detail_vila.html', context)
+def detail_view_apa(request,id):
+    post = get_object_or_404(aparteman,id=id)
+    context={
+        'post' : post
+    }
+    return render(request, 'detail_apa.html', context)
 
 
 def savepost(request):

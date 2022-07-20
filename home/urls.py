@@ -9,5 +9,6 @@ urlpatterns = [
     path('listaparteman/', views.list_view_aparteman, name='list_view_apa'),
     path('listvila/', views.list_view_vila, name='list_view_vila'),
     path('detailvila/<int:id>', views.detail_view_vila, name='detailvila'),
+    path('detailaparteman/<int:id>', views.detail_view_apa, name='detailapa'),
     path('savepost/',views.savepost,name='savepost'),
 ]
