@@ -1,3 +1,4 @@
+from ipaddress import ip_address
 from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
@@ -26,3 +27,5 @@ class AdminInformation(models.Model):
     class Meta:
         verbose_name= 'مشاور'
         verbose_name_plural= 'اطلاعات کارکنان'
+
+

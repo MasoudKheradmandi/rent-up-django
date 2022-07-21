@@ -17,3 +17,13 @@ def agent_detail(request,id):
         'agent' : agent,
     }
     return render(request,'agent-page.html',context)
+
+
+def dashboard(request):
+    return render(request,'dashboard.html',{})
+
+
+
+def MyProperty(request):
+    ip_address = request.user.ip_address
+    return render(request,'my-property.html',{})

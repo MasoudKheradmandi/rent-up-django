@@ -55,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'admin_informations.middleware.SaveIPAddressSimpleMiddleware',
+    'admin_informations.middleware.SaveIPAddressVillaSimpleMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'

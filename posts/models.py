@@ -2,6 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 # Create your models here.
+
+class IPAddressApa(models.Model):
+    ip_address = models.GenericIPAddressField()
+
+class IPAddressVilla(models.Model):
+    ip_address = models.GenericIPAddressField()
+
 class aparteman(models.Model):
     STATUS_BUY = (
         ('برای خرید', 'برای خرید'),
@@ -55,7 +62,7 @@ class aparteman(models.Model):
     parking = models.CharField(max_length=2,null=True)
     vise = models.BooleanField(default=False, verbose_name='ویژه؟')
     active = models.BooleanField(default=True, verbose_name='نمایش داده شود؟')
-    
+    hits = models.ManyToManyField(IPAddressApa,blank=True,related_name='hits')
     
     #--------------------BooleanField
     tahvie = models.BooleanField(default=False)
@@ -80,6 +87,8 @@ class aparteman(models.Model):
 class aparteman_images(models.Model):
     place = models.ForeignKey('aparteman',on_delete=models.CASCADE)
     images = models.ImageField()
+
+
 
 
 class vilae(models.Model):
@@ -133,7 +142,7 @@ class vilae(models.Model):
     vise = models.BooleanField(default=False, verbose_name="ویژه؟")
     active = models.BooleanField(default=True, verbose_name="نمایش؟")
     parking = models.CharField(max_length=2,null=True)
-
+    hits = models.ManyToManyField(IPAddressVilla,blank=True,related_name='hits')
 
 
         
@@ -164,9 +173,7 @@ class vilae_image(models.Model):
 
     def __str__(self):
         return self.place.titr
-    
 
-    
 
 class zamin(models.Model):
     SANAD_CHOICES = (
