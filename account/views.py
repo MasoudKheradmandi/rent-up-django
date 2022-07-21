@@ -4,7 +4,7 @@ from admin_informations.models import AdminInformation
 from django.contrib.admin.views.decorators import staff_member_required
 # Create your views here.
 
-@staff_member_required(login_url='/')
+@staff_member_required(login_url='/info/listagent')
 def profile(request):
     account = request.user
     form = UserAccountForm()

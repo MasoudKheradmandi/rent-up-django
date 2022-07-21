@@ -5,8 +5,9 @@ from django.utils import timezone
 class aparteman(models.Model):
     STATUS_BUY = (
         ('برای خرید', 'برای خرید'),
-        ('برای رهن و اجاره', 'برای رهن و اجاره'),
+        ('برای اجاره', 'برای اجاره'),
     )
+    #برای رهن و اجاره
     SANAD_CHOICES = (
         ('شش دانگ', 'شش دانگ'),
         ('مشاع', 'مشاع'),

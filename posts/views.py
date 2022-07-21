@@ -157,3 +157,38 @@ def save_post_zamin(request):
         'form': form
     }
     return render(request, 'save_post_zamin.html', context)
+
+def compare_post_f(request,noe,id):
+    if noe == 'aparteman':
+        post = aparteman.objects.get(id=id)
+    elif noe == 'vilae':
+        post = vilae.objects.get(id=id)
+    context={
+        'post' : post,
+        'noe' :noe,
+    }
+    return render(request,'compare-property.html',context)
+
+def choose_to_compare(request,noe):
+    f_id=request.GET.get('id')
+    if noe == 'aparteman':
+        posts = aparteman.objects.all()
+        return render(request, 'list_view_apa.html',{"posts": posts,'f_id':f_id,'noe_f':"aparteman"})
+    elif noe == 'vilae':
+        posts = vilae.objects.all()
+        return render(request, 'list_view_vila.html', {"posts": posts,'f_id':f_id,'noe_f':"vilae"})
+
+def compare_post_t(request,first_noe,first_id,seconed_id):
+    if first_noe == 'aparteman':
+        post1 = aparteman.objects.get(id=first_id)
+        post2 = aparteman.objects.get(id=seconed_id)
+    elif first_noe == 'vilae':
+        post1 = vilae.objects.get(id=first_id)
+        post2 = vilae.objects.get(id=seconed_id)            
+    context={
+        'post' : post1,
+        'post2' : post2,
+    }
+    return render(request,'compare-property-2.html',context)
+
+    

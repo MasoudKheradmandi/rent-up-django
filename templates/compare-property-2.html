@@ -71,18 +71,6 @@
 				</div>
 				<div class="col-lg-3 col-md-4 col-sm-12 text-center pricing--emphasise">
 					<div class="comp_properties">
-						<br>
-						<br>
-						<a href="{% url 'posts:choose_to_compare' noe %}?id={{post.id}}" class="btn btn-theme btn-rounded">
-							<div class="clp-img">
-								 اضافه کردن
-							</div>
-						</a>
-					</div>
-				
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-12 text-center">
-					<div class="comp_properties">
 						<div class="clp-img">
 							{% if post.andaze %}
 							
@@ -220,8 +208,147 @@
 						
 					</ul>
 				</div>
+				<div class="col-lg-3 col-md-4 col-sm-12 text-center">
+					<div class="comp_properties">
+						<div class="clp-img">
+							{% if post.andaze %}
+							
+								<a href="{% url 'home:detailapa' post2.id %}">
+							{% else %}
+									
+								<a href="{% url 'home:detailvila' post2.id %}">
+							{% endif %}
+								<img src="{{post2.image.url}}" class="img-fluid" alt="">
+									{% comment %} <span class="remove-from-compare"><i class="ti-close"></i></span> {% endcomment %}
+						</div>
+						</a>
+						<div class="clp-title">
+							<h4>{{post2.titr}}</h4>
+							{% if post2.status_buy == "برای خرید" %}
+							<span>{{post2.gheymat}}تومن</span>
+							{% elif post2.status_buy == "برای اجاره" %}
+							<span>{{post2.gheymat_rahn}}رهن</span>
+							<br>
+							<span>{{post2.gheymat_ejare}}اجاره</span>
+							{% endif %}
+						</div>
+					</div>
+					<ul>
+						<li>
+							{% if post2.andaze %}{{post2.andaze}}{% else %}{{post2.andaze_bana}}{% endif %} متر مربع
+							<span class="show-mb"></span>
+						</li>
+						<li>
+							{{post2.tedad_otagh}}
+							<span class="show-mb">اتاق ها</span>
+						</li>
+						<li>
+							{{post2.sal_sakht}}
+							<span class="show-mb">سن</span>
+						</li>
+						
+						<li>
+							{{post2.tedad_dastshoe}}
+							<span class="show-mb">حمام</span>
+						</li>
+						<li>
+							{% if post2.tahvie %}
+							<div class="checkmark"></div>
+							<span class="show-mb">تهویه هوا</span>
+							{% else %}
+							<div class="crossmark">
+							<span class="show-mb">بدون تهویه هوا </span>
+							{% endif %}
+						</li>
+						<li>
+							{% if post2.internet %}
+							<div class="checkmark"></div>
+							<span class="show-mb">اینترنت</span>
+							{% else %}
+							<div class="crossmark">
+							<span class="show-mb">بدون اینترنت </span>
+							{% endif %}
+						</li>
+						<li>
+							{% if post2.trass %}
+							<div class="checkmark"></div>
+							<span class="show-mb">تراس</span>
+							{% else %}
+							<div class="crossmark">
+							<span class="show-mb">بدون تراس </span>
+							{% endif %}
+						</li>
+						<li>
+							{% if post2.wifi %}
+							<div class="checkmark"></div>
+							<span class="show-mb">wifi</span>
+							{% else %}
+							<div class="crossmark">
+							<span class="show-mb">بدون wifi </span>
+							{% endif %}
+						</li>
+						<li>
+							{% if post2.bed %}
+							<div class="checkmark"></div>
+							<span class="show-mb">تخت خواب</span>
+							{% else %}
+							<div class="crossmark">
+							<span class="show-mb">بدون تخت خواب </span>
+							{% endif %}
+						</li>
+						<li>
+							{% if post2.micro %}
+							<div class="checkmark"></div>
+							<span class="show-mb">مایکروویو</span>
+							{% else %}
+							<div class="crossmark">
+							<span class="show-mb">بدون مایکروویو </span>
+							{% endif %}
+						</li>
+						<li>
+							{% if post2.balcony %}
+							<div class="checkmark"></div>
+							<span class="show-mb">بالکنی</span>
+							{% else %}
+							<div class="crossmark">
+							<span class="show-mb">بدون بالکنی </span>
+							{% endif %}
+						</li>
+						<li>
+							{% if post2.sahel %}
+							<div class="checkmark"></div>
+							<span class="show-mb">ساحل</span>
+							{% else %}
+							<div class="crossmark">
+							<span class="show-mb">بدون ساحل </span>
+							{% endif %}
+						</li>
+						<li>
+							{% if post2.system_garmayeshi %}
+							<div class="checkmark"></div>
+							<span class="show-mb">سیستم گرمایشی
+							</span>
+							{% else %}
+							<div class="crossmark">
+							<span class="show-mb">بدون سیستم گرمایشی
+							 </span>
+							{% endif %}
+						</li>
+						<li>
+							{% if post2.sigary %}
+							<div class="checkmark"></div>
+							<span class="show-mb">سیگاری</span>
+							{% else %} 
+							<div class="crossmark">
+							<span class="show-mb">بدون سیگاری </span>
+							{% endif %}
+						</li>
+						
+						
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-{% endblock body %}
+{% endblock body %}	

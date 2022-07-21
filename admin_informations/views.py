@@ -5,6 +5,7 @@ from .models import AdminInformation
 
 def agent_list(request):
     agents = AdminInformation.objects.all()
+    print(request.GET.get('next'))
     context = {
         "agents" : agents ,
     }
@@ -12,7 +13,6 @@ def agent_list(request):
     
 def agent_detail(request,id):
     agent = AdminInformation.objects.get(id=id)
-    
     context = {
         'agent' : agent,
     }

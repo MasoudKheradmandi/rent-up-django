@@ -121,7 +121,7 @@
 										<div class="_card_flex_01">
 											{% if apa.status_buy == "برای خرید" %}
 											<span class="_list_blickes _netork">{{apa.gheymat}} تومان</span>
-											{% elif apa.status_buy == "برای رهن و اجاره" %}
+											{% elif apa.status_buy == "برای اجاره" %}
 											<span class="_list_blickes types">{{apa.gheymat_rahn}}<br> رهن </span>
 											<span class="_list_blickes types">{{apa.gheymat_ejare}}<br>اجاره</span>
 											{% endif %}
@@ -165,7 +165,7 @@
 										</li>
 										<li>
 											<div class="prt_saveed_12lk">
-												<a href="compare-property.html" data-toggle="tooltip" data-placement="top" data-original-title="مقایسه"><i class="ti-control-shuffle"></i></a>
+												<a href="{% url 'posts:compare_post_f' noe='aparteman' id=apa.id%}" data-toggle="tooltip" data-placement="top" data-original-title="مقایسه"><i class="ti-control-shuffle"></i></a>
 											</div>
 										</li>
 										
@@ -257,7 +257,7 @@
 										</li>
 										<li>
 											<div class="prt_saveed_12lk">
-												<a href="compare-property.html" data-toggle="tooltip" data-placement="top" data-original-title="مقایسه"><i class="ti-control-shuffle"></i></a>
+												<a href="{% url 'posts:compare_post_f' noe='vilae' id=vil.id %}" data-toggle="tooltip" data-placement="top" data-original-title="مقایسه"><i class="ti-control-shuffle"></i></a>
 											</div>
 										</li>
 										

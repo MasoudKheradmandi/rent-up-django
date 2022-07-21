@@ -21,7 +21,7 @@
 			<section class="gray pt-4">
 			
 				<div class="container">
-					
+					{% if count %}
 					<div class="row m-0">
 						<div class="short_wraping">
 							<div class="row align-items-center">
@@ -72,7 +72,7 @@
 							</div>
 						</div>
 					</div>
-					
+					{% endif %}
 					<div class="row">
 						
 						<!-- property Sidebar -->
@@ -297,13 +297,19 @@
 												<div class="listing-short-detail-wrap">
 													<div class="_card_list_flex mb-2">
 														<div class="_card_flex_01">
+															{% comment %} _netork {% endcomment %}
 															{% if post.status_buy == "برای خرید" %}
-															<span class="_list_blickes _netork">{{post.gheymat}} تومان</span>
+															<span class="_list_blickes types">{{post.gheymat}} تومان</span>
 															{% elif post.status_buy == "برای اجاره" %}
 															<span class="_list_blickes types">{{post.gheymat_rahn}}<br> رهن </span>
 															<span class="_list_blickes types">{{post.gheymat_ejare}}<br>اجاره</span>
 															{% endif %}
-															</div>
+															{% if f_id %}
+															<a href="{% url 'posts:compare_post_t' first_noe=noe_f  first_id=f_id  seconed_id=post.id  %}"><span class="_list_blickes _netork">مقایسه</span></a>
+															{% else %}
+															<a href="{% url 'posts:compare_post_f' noe="vilae" id=post.id %}"><span class="_list_blickes _netork">مقایسه</span></a>
+															{% endif %}
+														</div>
 														<div class="_card_flex_last">
 															<h6 class="listing-card-info-price mb-0">
 															
