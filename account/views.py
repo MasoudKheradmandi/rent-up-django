@@ -1,11 +1,10 @@
 from django.shortcuts import render
 from .forms import UserAccountForm
 from admin_informations.models import AdminInformation
-from django.contrib.auth.decorators import permission_required
+from django.contrib.admin.views.decorators import staff_member_required
 # Create your views here.
 
-
-@permission_required('is_staff',login_url='/')
+@staff_member_required(login_url='/')
 def profile(request):
     account = request.user
     form = UserAccountForm()

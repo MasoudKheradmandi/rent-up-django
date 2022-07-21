@@ -32,7 +32,7 @@
 						<!-- Single Agent -->
 						<div class="col-lg-4 col-md-6 col-sm-12">
 							<div class="grid_agents">
-								<div class="elio_mx_list theme-bg-2">{{agent.account.aparteman_set.all.count}}  ویلا  {{agent.account.vilae_set.all.count}} اپارتمان</div>
+								<div class="elio_mx_list theme-bg-2">{{agent.account.vilae_set.all.count}}  ویلا  {{agent.account.aparteman_set.all.count}} اپارتمان</div>
 								{% comment %} <div class="elio_mx_list theme-bg-2">{{agent.account.vilae_set.all.count}} ویلا</div> {% endcomment %}
 								<div class="grid_agents-wrap">
 									
@@ -45,7 +45,7 @@
 									
 									<div class="fr-grid-deatil">
 										<span><i class="ti-location-pin ml-1"></i>{{agent.address}}</span>
-										<h5 class="fr-can-name"><a href="agent-page.html">{{agent.full_name}}</a></h5>
+										<h5 class="fr-can-name"><a href="{% url 'admin_informations:detailagent' agent.id %}">{{agent.full_name}}</a></h5>
 										<ul class="inline_social">
 											{% if agent.whats_app %}<li><a href="{{agent.whats_app}}" class=""><i class="fa fa-whatsapp"></i></a></li>{% endif %}
 											{% if agent.telegram %}<li><a href="{{agent.telegram}}" class="ln"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>{% endif %}

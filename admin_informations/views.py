@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import AdminInformation
+from .models import AdminInformation 
 # Create your views here.
 
 
@@ -12,6 +12,7 @@ def agent_list(request):
     
 def agent_detail(request,id):
     agent = AdminInformation.objects.get(id=id)
+    
     context = {
         'agent' : agent,
     }
