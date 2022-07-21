@@ -76,12 +76,12 @@
 					</div>
 					<div class="_prtis_list_body">
 						<ul class="deatil_features">
-							<li><strong>لیلا یوسفی</strong>نام</li>
-							<li><strong>021 123 45 67</strong>شماره</li>
+							<li><strong>{{agent.full_name}}</strong>نام</li>
+							<li><strong>{{agent.phone}}</strong>شماره</li>
 							<li><strong>تهران</strong>استان</li>
-							<li><strong>تهران</strong>شهر</li>
-							<li><strong>ایران</strong>کشور</li>
-							<li><strong>021 123 45 67</strong>فکس</li>
+							<li><strong>{{agent.city}}</strong>شهر</li>
+							
+							<li><strong>021 123 45 67</strong> شماره whats app</li>
 							<li><strong>22 ملک</strong>ملک ها</li>
 						</ul>
 					</div>
@@ -106,9 +106,9 @@
 								<div class="_exlio_125">برای اجاره</div>
 								<div class="list-img-slide">
 									<div class="click">
-										<div><a href="single-property-1.html"><img src="assets/img/p-1.png" class="img-fluid mx-auto" alt="" /></a></div>
-										<div><a href="single-property-1.html"><img src="assets/img/p-2.png" class="img-fluid mx-auto" alt="" /></a></div>
-										<div><a href="single-property-1.html"><img src="assets/img/p-3.png" class="img-fluid mx-auto" alt="" /></a></div>
+										<div><a href="single-property-1.html"><img src="{% static 'assets/img/p-1.png' %}" class="img-fluid mx-auto" alt="" /></a></div>
+										<div><a href="single-property-1.html"><img src="{% static 'assets/img/p-2.png' %}" class="img-fluid mx-auto" alt="" /></a></div>
+										<div><a href="single-property-1.html"><img src="{% static 'assets/img/p-3.png' %}" class="img-fluid mx-auto" alt="" /></a></div>
 									</div>
 								</div>
 							</div>
@@ -135,20 +135,20 @@
 							<div class="price-features-wrapper">
 								<div class="list-fx-features">
 									<div class="listing-card-info-icon">
-										<div class="inc-fleat-icon"><img src="assets/img/bed.svg" width="13" alt="" /></div>4 خوابه
+										<div class="inc-fleat-icon"><img src="{% static 'assets/img/bed.svg' %}" width="13" alt="" /></div>4 خوابه
 									</div>
 									<div class="listing-card-info-icon">
-										<div class="inc-fleat-icon"><img src="assets/img/bathtub.svg" width="13" alt="" /></div>2 حمام
+										<div class="inc-fleat-icon"><img src="{% static 'assets/img/bathtub.svg' %}" width="13" alt="" /></div>2 حمام
 									</div>
 									<div class="listing-card-info-icon">
-										<div class="inc-fleat-icon"><img src="assets/img/move.svg" width="13" alt="" /></div>820 متر مربع
+										<div class="inc-fleat-icon"><img src="{% static 'assets/img/move.svg' %}" width="13" alt="" /></div>820 متر مربع
 									</div>
 								</div>
 							</div>
 							
 							<div class="listing-detail-footer">
 								<div class="footer-first">
-									<div class="foot-location"><img src="assets/img/pin.svg" width="18" alt="" />مونترال ، کانادا</div>
+									<div class="foot-location"><img src="{% static 'assets/img/pin.svg' %}" width="18" alt="" />مونترال ، کانادا</div>
 								</div>
 								<div class="footer-flex">
 									<ul class="selio_style">
@@ -213,7 +213,7 @@
 							<!-- List Sibar Property -->
 							<div class="sides_list_property">
 								<div class="sides_list_property_thumb">
-									<img src="assets/img/p-1.png" class="img-fluid" alt="" />
+									<img src="{% static 'assets/img/p-1.png' %}" class="img-fluid" alt="" />
 								</div>
 								<div class="sides_list_property_detail">
 									<h4><a href="single-property-1.html">آپارتمان جدید 2 خوابه تهران</a></h4>
@@ -232,7 +232,7 @@
 							<!-- List Sibar Property -->
 							<div class="sides_list_property">
 								<div class="sides_list_property_thumb">
-									<img src="assets/img/p-4.png" class="img-fluid" alt="" />
+									<img src="{% static 'assets/img/p-4.png' %}" class="img-fluid" alt="" />
 								</div>
 								<div class="sides_list_property_detail">
 									<h4><a href="single-property-1.html">آپارتمان جدید 2 خوابه تهران</a></h4>
@@ -249,42 +249,7 @@
 							</div>
 							
 							<!-- List Sibar Property -->
-							<div class="sides_list_property">
-								<div class="sides_list_property_thumb">
-									<img src="assets/img/p-7.png" class="img-fluid" alt="" />
-								</div>
-								<div class="sides_list_property_detail">
-									<h4><a href="single-property-1.html">آپارتمان جدید 2 خوابه تهران</a></h4>
-									<span><i class="ti-location-pin"></i>تهران ، زعفرانیه</span>
-									<div class="lists_property_price">
-										<div class="lists_property_types">
-											<div class="property_types_vlix buy">برای خرید</div>
-										</div>
-										<div class="lists_property_price_value">
-											<h4>873 میلیون</h4>
-										</div>
-									</div>
-								</div>
-							</div>
 							
-							<!-- List Sibar Property -->
-							<div class="sides_list_property">
-								<div class="sides_list_property_thumb">
-									<img src="assets/img/p-5.png" class="img-fluid" alt="" />
-								</div>
-								<div class="sides_list_property_detail">
-									<h4><a href="single-property-1.html">آپارتمان جدید 2 خوابه تهران</a></h4>
-									<span><i class="ti-location-pin"></i>تهران ، زعفرانیه</span>
-									<div class="lists_property_price">
-										<div class="lists_property_types">
-											<div class="property_types_vlix">برای اجاره</div>
-										</div>
-										<div class="lists_property_price_value">
-											<h4>624 میلیون</h4>
-										</div>
-									</div>
-								</div>
-							</div>
 							
 						</div>
 						

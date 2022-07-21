@@ -19,6 +19,7 @@
 					</div>
 				</div>
 			</div>
+			
 			<!-- ============================ Page Title End ================================== -->
 			
 			
@@ -36,7 +37,7 @@
 								<div class="grid_agents-wrap">
 									
 									<div class="fr-grid-thumb">
-										<a href="agent-page.html">
+										<a href="{% url 'admin_informations:detailagent' agent.id %}">
 											<span class="verified"><img src="{% static 'assets/img/verified.svg'%}" class="verify mx-auto" alt=""></span>
 											<img src="{{agent.image.url}}" class="img-fluid mx-auto" alt="">
 										</a>
